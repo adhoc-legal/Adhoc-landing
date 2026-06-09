@@ -562,3 +562,177 @@ footer .nav-logo .wm-txt { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+/* Flash prevention: fondo en el elemento raíz */
+html[data-theme="dark"] {
+  background-color: oklch(0.13 0.010 105);
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] {
+  /* ── Escala de neutrales invertida ── */
+  --white:      oklch(0.13 0.010 105);
+  --gray-50:    oklch(0.17 0.010 105);
+  --gray-100:   oklch(0.23 0.009 105);
+  --gray-200:   oklch(0.30 0.008 105);
+  --gray-300:   oklch(0.38 0.007 105);
+  --gray-400:   oklch(0.50 0.009 105);
+  --gray-500:   oklch(0.62 0.011 105);
+  --gray-600:   oklch(0.74 0.010 105);
+  --gray-700:   oklch(0.87 0.009 105);
+
+  --black:      oklch(0.95 0.008 105);
+  --black-soft: oklch(0.88 0.009 105);
+
+  /* Secciones oscuras permanecen las más profundas */
+  --ink:        oklch(0.09 0.013 105);
+  --ink-soft:   oklch(0.11 0.012 105);
+
+  /* Tinte de acento oscuro para hover states */
+  --accent-soft: oklch(0.22 0.06 105);
+
+  /* Sombras más profundas sobre oscuro */
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.40);
+  --shadow-sm: 0 4px 18px rgba(0,0,0,0.45);
+  --shadow-md: 0 14px 40px rgba(0,0,0,0.55);
+  --shadow-lg: 0 28px 70px rgba(0,0,0,0.65);
+}
+
+/* ── Selección de texto ── */
+html[data-theme="dark"] ::selection {
+  background: var(--accent);
+  color: oklch(0.15 0.02 105);
+}
+
+/* ── Focus ── */
+html[data-theme="dark"] :focus-visible {
+  outline-color: var(--accent);
+}
+
+/* ── NAV ── */
+html[data-theme="dark"] nav {
+  background: oklch(0.13 0.010 105 / 0.88);
+  border-bottom-color: transparent;
+}
+html[data-theme="dark"] nav.scrolled {
+  background: oklch(0.11 0.012 105 / 0.97);
+  border-bottom-color: oklch(1 0 0 / 0.07);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.45);
+}
+html[data-theme="dark"] .nav-cta {
+  background: var(--accent) !important;
+  color: oklch(0.15 0.02 105) !important;
+}
+html[data-theme="dark"] .nav-cta:hover {
+  background: oklch(0.95 0.010 105) !important;
+  color: oklch(0.12 0.012 105) !important;
+  box-shadow: var(--shadow-md);
+}
+html[data-theme="dark"] .nav-links.open {
+  background: var(--gray-50);
+  border-bottom-color: var(--gray-200);
+}
+
+/* ── HERO ── */
+html[data-theme="dark"] .hero-title .accent {
+  color: #14160f; /* texto oscuro sobre el highlight amarillo */
+}
+html[data-theme="dark"] #hero::before {
+  background: radial-gradient(60% 50% at 50% 0%, oklch(from var(--accent) 0.28 0.08 h / 0.15), transparent 70%);
+}
+html[data-theme="dark"] .hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  opacity: 0.30;
+}
+html[data-theme="dark"] .hero-trust {
+  border-top-color: var(--gray-200);
+}
+
+/* ── SECCIÓN POR QUÉ ──
+   En modo claro es la sección más oscura (--ink). En modo oscuro,
+   toda la página es oscura; usamos una superficie elevada para diferenciarla. */
+html[data-theme="dark"] #por-que {
+  background: var(--gray-50);
+}
+html[data-theme="dark"] .why-left .section-title,
+html[data-theme="dark"] .why-text h4 {
+  color: var(--black);
+}
+html[data-theme="dark"] .why-claim {
+  color: var(--gray-600);
+}
+html[data-theme="dark"] .why-text p {
+  color: var(--gray-500);
+}
+html[data-theme="dark"] .why-item {
+  border-bottom-color: var(--gray-200);
+}
+html[data-theme="dark"] .why-list {
+  border-top-color: var(--gray-200);
+}
+html[data-theme="dark"] .eyebrow.on-dark {
+  color: var(--gray-500);
+}
+
+/* ── EQUIPO ── */
+html[data-theme="dark"] .team-ph .mono {
+  background: var(--accent);
+  color: oklch(0.15 0.02 105);
+}
+html[data-theme="dark"] .team-linkedin {
+  background: var(--accent);
+  color: oklch(0.15 0.02 105);
+}
+html[data-theme="dark"] .team-linkedin:hover {
+  background: var(--gray-700);
+  color: oklch(0.14 0.012 105);
+}
+
+/* ── TESTIMONIOS ── */
+html[data-theme="dark"] .author-avatar {
+  background: oklch(0.24 0.035 105);
+  color: var(--accent);
+}
+html[data-theme="dark"] .testi-rating .stars-sm,
+html[data-theme="dark"] .stars {
+  color: var(--accent);
+}
+
+/* ── FORMULARIO ── */
+html[data-theme="dark"] .form-group input:focus,
+html[data-theme="dark"] .form-group select:focus,
+html[data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px oklch(from var(--accent) l c h / 0.22);
+}
+
+/* ── CTA FLOTANTE ── */
+html[data-theme="dark"] .float-cta {
+  background: var(--accent);
+  color: oklch(0.15 0.02 105);
+}
+
+/* ── TOGGLE DE TEMA ── */
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: none; border: 1.5px solid var(--gray-200);
+  cursor: pointer; color: var(--gray-600);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s;
+  padding: 6px; flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: var(--gray-100);
+  border-color: var(--gray-300);
+  color: var(--black);
+}
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }

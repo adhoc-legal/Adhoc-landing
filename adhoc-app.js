@@ -134,6 +134,21 @@
     if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
   });
 
+  /* ── TOGGLE DARK / LIGHT ── */
+  var themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('adhoc-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('adhoc-theme', 'dark');
+      }
+    });
+  }
+
   /* ── CTA flotante (móvil) ── */
   var floatCta = document.querySelector('.float-cta');
   var contacto = document.getElementById('contacto');
