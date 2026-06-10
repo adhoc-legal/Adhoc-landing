@@ -18,6 +18,7 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#equipo">Equipo</a></li>
+    <li><a href="#evaluacion">Ley 21.719</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#contacto" class="nav-cta">Agenda</a></li>
   </ul>
@@ -226,6 +227,92 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVALUACIÓN LEY 21.719 -->
+<section id="evaluacion">
+  <div class="section-inner">
+    <div class="fnl-head">
+      <div class="eyebrow reveal">Ley N° 21.719 · Protección de datos</div>
+      <h2 class="section-title reveal" data-delay="80">¿Tu organización cumple<br/>con la <span class="accent">nueva ley de datos</span>?</h2>
+      <p class="lede reveal" data-delay="160">Responde 7 preguntas y descubre en menos de dos minutos tu nivel de exposición frente a la nueva Ley de Protección de Datos de Chile.</p>
+    </div>
+
+    <div class="fnl reveal" data-delay="220">
+      <section class="screen" id="fnl-quiz">
+        <div class="card">
+          <div class="brand"><span class="wm"><span class="br">[</span>ADHOC<span class="br">]</span></span><span class="legal-tag">Legal</span></div>
+          <div>
+            <h3 class="q-title">Evaluación de cumplimiento Ley N° 21.719</h3>
+            <p class="q-sub">Responde 7 preguntas y descubre el nivel de exposición de tu organización frente a la nueva Ley de Protección de Datos.</p>
+            <div class="step-row">
+              <span class="step-label" id="fnl-step">Paso 1 de 7</span>
+              <span class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            </div>
+            <div class="progress"><i id="fnl-progress"></i></div>
+          </div>
+          <div class="question" id="fnl-host" aria-live="polite"></div>
+          <div class="legal" id="fnl-legal" hidden>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <div><b>Aviso legal importante</b><p>Esta herramienta es de carácter informativo y orientativo. No constituye asesoría jurídica ni reemplaza la revisión de un abogado sobre tu caso particular.</p></div>
+          </div>
+          <div class="nav-row"><button class="back" id="fnl-quiz-back" hidden>‹ Anterior</button></div>
+        </div>
+      </section>
+
+      <section class="screen" id="fnl-capture">
+        <div class="card">
+          <div class="brand"><span class="wm"><span class="br">[</span>ADHOC<span class="br">]</span></span><span class="legal-tag">Legal</span></div>
+          <div class="cap-head">
+            <span class="eyebrow">Casi listo</span>
+            <h3>Estás a un paso de tu resultado</h3>
+            <p>Déjanos dónde enviarte tu evaluación preliminar y las recomendaciones para tu organización.</p>
+          </div>
+          <div class="field" id="fnl-field-name">
+            <label for="fnl-name">Nombre</label>
+            <input type="text" id="fnl-name" placeholder="Tu nombre" />
+            <span class="err">Ingresa tu nombre (mínimo 2 caracteres).</span>
+          </div>
+          <div class="field" id="fnl-field-phone">
+            <label for="fnl-phone">WhatsApp</label>
+            <div class="phone-wrap"><span class="phone-prefix">+56</span><input type="tel" id="fnl-phone" inputmode="numeric" placeholder="9 1234 5678" /></div>
+            <span class="err">Ingresa un número válido (8 o 9 dígitos).</span>
+          </div>
+          <div style="margin-top:1.5rem;"><button class="btn btn-primary" id="fnl-submit"><span class="lbl">Ver mi resultado</span> <span class="arr">→</span></button></div>
+          <p class="microcopy">🔒 Confidencial · No compartimos tus datos</p>
+          <div class="nav-row"><button class="back" id="fnl-cap-back">‹ Anterior</button></div>
+        </div>
+      </section>
+
+      <section class="screen" id="fnl-result">
+        <div class="card">
+          <div class="nav-row" style="margin-top:0;margin-bottom:.3rem;"><button class="back" id="fnl-restart">‹ Volver a empezar</button></div>
+          <div class="res-hero">
+            <span class="eyebrow">Resultado preliminar</span>
+            <div class="res-icon" id="fnl-res-icon"></div>
+            <h3 class="res-title" id="fnl-res-title"></h3>
+            <p class="res-sub" id="fnl-res-sub"></p>
+          </div>
+          <div class="meter">
+            <div class="meter-scale"><span>Bajo</span><span>Medio</span><span>Alto</span></div>
+            <div class="meter-track"><span class="meter-fill" id="fnl-fill"></span></div>
+            <div class="meter-readout"><span class="meter-pct" id="fnl-pct">0%</span><span class="meter-word" id="fnl-word"></span></div>
+          </div>
+          <div class="offer">
+            <span class="eyebrow">Revisión legal personalizada</span>
+            <div class="offer-price-row"><span class="offer-price">$29.990 <span class="cur">CLP</span></span></div>
+            <ul class="offer-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Diagnóstico de tu situación frente a la Ley N° 21.719</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Identificación de brechas y riesgos de sanción</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Plan de acción priorizado para regularizar</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Reunión con un abogado especialista del estudio</li>
+            </ul>
+            <a class="btn btn-primary" id="offer-cta" href="#contacto">QUIERO MI REVISIÓN LEGAL <span class="arr">→</span></a>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </section>
@@ -454,6 +541,7 @@
               <option value="civil">Derecho Civil</option>
               <option value="empresas">Asesoría Empresarial</option>
               <option value="sociedades">Constitución de Sociedades</option>
+              <option value="ley21719">Revisión Ley 21.719</option>
               <option value="otro">Otro</option>
             </select>
           </div>
@@ -498,6 +586,7 @@
 <div id="toast">✓ Mensaje enviado correctamente</div>
 
 <script src="adhoc-app.js"></script>
+<script src="adhoc-funnel.js" defer></script>
 
 </body>
 </html>
