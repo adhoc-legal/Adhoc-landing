@@ -991,3 +991,13 @@ html[data-theme="dark"] .plan-price, html[data-theme="dark"] .plan-cta, html[dat
 .faq-item p { padding: 0 0 1.25rem; color: var(--gray-600); line-height: 1.7; max-width: 72ch; }
 html[data-theme="dark"] .faq-item summary::after { color: var(--accent); }
 
+/* ── El informe (tarjeta única, etapa 1) ── */
+.informe-card { max-width: 660px; margin: 2.8rem auto 0; }
+.informe-list { list-style: none; display: grid; gap: 0.6rem; margin: 0.2rem 0 0.7rem; }
+.informe-list li { position: relative; padding-left: 1.7rem; color: var(--gray-600); line-height: 1.55; }
+.informe-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 0.02em;
+  font-weight: 700; color: var(--accent-ink);
+}
+html[data-theme="dark"] .informe-list li::before { color: var(--accent); }
+
