@@ -82,6 +82,24 @@
     timer = setInterval(tick, 1000);
   })();
 
+  /* ── Días restantes en la barra de anuncio ── */
+  (function () {
+    var el = document.getElementById('announce-days');
+    if (!el) return;
+    var target = new Date('2026-12-01T00:00:00-03:00').getTime();
+    function upd() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        var bar = document.getElementById('announce');
+        if (bar) bar.innerHTML = '<span class="announce-txt">La Ley 21.719 ya está vigente. Ponte al día ahora.</span><span class="announce-cta">Evalúa tu empresa <span class="arr">&#8594;</span></span>';
+        return;
+      }
+      el.textContent = Math.floor(diff / 86400000);
+    }
+    upd();
+    setInterval(upd, 60000);
+  })();
+
   /* ── REVEAL on scroll ── */
   function setupReveal() {
     document.querySelectorAll('[data-stagger]').forEach(function (group) {
