@@ -190,8 +190,12 @@ section { padding: clamp(5rem, 9vw, 9rem) var(--pad-x); }
    ============================================================ */
 #hero {
   min-height: 100svh; display: flex; align-items: center; justify-content: center;
-  padding: 110px var(--pad-x) 4rem; position: relative; overflow: hidden;
+  padding: 130px var(--pad-x) 4rem; position: relative; overflow: hidden;
   background: var(--white);
+}
+/* Si el contenido del hero supera la altura visible, anclar arriba para no cortar el titular */
+@media (max-height: 860px) {
+  #hero { align-items: flex-start; }
 }
 #hero::before {
   content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -274,6 +278,39 @@ section { padding: clamp(5rem, 9vw, 9rem) var(--pad-x); }
 [data-hero="editorial"] .hero-actions { justify-content: flex-start; }
 [data-hero="editorial"] .hero-trust { justify-content: flex-start; }
 [data-hero="editorial"] .hero-title .accent { white-space: normal; }
+
+/* ── Contador regresivo Ley 21.719 ── */
+.hero-countdown {
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  margin: 0 auto 2.4rem;
+}
+.hero-countdown .cd-label {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--gray-600); text-align: center; max-width: 40ch; text-wrap: balance;
+}
+.cd-units { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+.cd-unit {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  min-width: 70px; padding: 0.85rem 0.7rem;
+  background: var(--ink); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.cd-num {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1;
+  color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+}
+.cd-tag {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.cd-live {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  color: var(--accent-ink); text-decoration: none;
+}
+@media (max-width: 480px) {
+  .cd-unit { min-width: 60px; padding: 0.7rem 0.5rem; }
+}
 
 /* ============================================================
    STATS BAND

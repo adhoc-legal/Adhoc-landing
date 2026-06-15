@@ -44,6 +44,44 @@
     }, 1300);
   }
 
+  /* ── CONTADOR REGRESIVO Ley 21.719 ── */
+  (function () {
+    var box = document.getElementById('countdown');
+    if (!box) return;
+    var cd = document.querySelector('.hero-countdown');
+    // 1 de diciembre de 2026, 00:00 hora de Chile continental (UTC-3)
+    var target = new Date('2026-12-01T00:00:00-03:00').getTime();
+    var elD = box.querySelector('[data-cd="days"]');
+    var elH = box.querySelector('[data-cd="hours"]');
+    var elM = box.querySelector('[data-cd="mins"]');
+    var elS = box.querySelector('[data-cd="secs"]');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    var timer;
+    function tick() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        if (timer) clearInterval(timer);
+        if (cd) {
+          var lbl = cd.querySelector('.cd-label');
+          if (lbl) lbl.textContent = 'La Ley 21.719 ya está vigente.';
+        }
+        box.innerHTML = '<a class="cd-live" href="#evaluacion">Ponte al día ahora →</a>';
+        return;
+      }
+      var s = Math.floor(diff / 1000);
+      var d = Math.floor(s / 86400);
+      var h = Math.floor((s % 86400) / 3600);
+      var m = Math.floor((s % 3600) / 60);
+      var sec = s % 60;
+      if (elD) elD.textContent = d;
+      if (elH) elH.textContent = pad(h);
+      if (elM) elM.textContent = pad(m);
+      if (elS) elS.textContent = pad(sec);
+    }
+    tick();
+    timer = setInterval(tick, 1000);
+  })();
+
   /* ── REVEAL on scroll ── */
   function setupReveal() {
     document.querySelectorAll('[data-stagger]').forEach(function (group) {
