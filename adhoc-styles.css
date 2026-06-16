@@ -1064,13 +1064,14 @@ html[data-theme="dark"] .qtabs-num { color: var(--accent); }
 html[data-theme="dark"] .deal-list li::before { color: var(--accent); }
 @media (max-width: 760px) { .informe-deal { grid-template-columns: 1fr; } }
 
-/* Otras áreas (banda compacta, secundaria) */
-.otras { padding-top: clamp(3rem, 5vw, 4.5rem); padding-bottom: clamp(3rem, 5vw, 4.5rem); }
-.otras-row {
-  display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
-  border-top: 1px solid var(--gray-200); padding-top: 2.2rem;
-}
-.otras-copy .eyebrow { margin-bottom: 0.7rem; }
-.otras-text { color: var(--gray-600); max-width: 52ch; line-height: 1.6; }
-.otras-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+/* Estas dos secciones mantienen la tipografía sans original (no serif) */
+#por-que .section-title,
+#servicios .section-title { font-family: var(--font-display); letter-spacing: -0.035em; }
+
+/* Otras áreas (sección secundaria con presencia, sin tarjetas pesadas) */
+.otras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.6rem; }
+.otras-item { padding-top: 1.2rem; border-top: 2px solid var(--accent); }
+.otras-item h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.otras-item p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.6; }
+@media (max-width: 760px) { .otras-grid { grid-template-columns: 1fr; } }
 
