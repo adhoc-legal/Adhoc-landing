@@ -1105,6 +1105,9 @@ html[data-theme="dark"] .deal-list li::before { color: var(--accent); }
 }
 .aseso-title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; margin-top: 0.3rem; }
 .aseso-desc { color: var(--gray-600); font-size: 0.92rem; line-height: 1.6; flex: 1; }
+.aseso-price { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; color: var(--accent-ink); letter-spacing: -0.02em; margin-top: 0.4rem; }
+.aseso-cur { font-size: 0.7rem; font-weight: 600; color: var(--gray-500); letter-spacing: 0.04em; }
+html[data-theme="dark"] .aseso-price { color: var(--accent); }
 .aseso-cta { margin-top: 0.5rem; font-weight: 600; color: var(--accent-ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
 .aseso-cta .arr { transition: transform 0.25s var(--ease); }
 .aseso-cta:hover .arr { transform: translateX(4px); }
