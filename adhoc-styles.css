@@ -1075,6 +1075,8 @@ html[data-theme="dark"] .qtabs-num { color: var(--accent); }
 .deal-cur { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 0.7rem; }
 .deal-cta { width: 100%; justify-content: center; margin-top: 0.2rem; }
 .deal-reassure { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin-top: 0.3rem; }
+.deal-schedule { font-size: 0.85rem; color: rgba(255,255,255,0.78); text-decoration: underline; text-underline-offset: 3px; margin-top: 0.5rem; transition: color 0.2s var(--ease); }
+.deal-schedule:hover { color: var(--accent); }
 html[data-theme="dark"] .deal-list li::before { color: var(--accent); }
 @media (max-width: 760px) { .informe-deal { grid-template-columns: 1fr; } }
 
