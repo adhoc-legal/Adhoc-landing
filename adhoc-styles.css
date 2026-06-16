@@ -1028,12 +1028,17 @@ html[data-theme="dark"] .informe-list li::before { color: var(--accent); }
   padding: 0.7rem 1.15rem; border-radius: 50px; cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
 }
-.qtab:hover { border-color: var(--black); transform: translateY(-1px); }
-.qtab.is-on { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.qtab:hover { border-color: var(--accent-ink); color: var(--accent-ink); transform: translateY(-1px); }
+.qtab.is-on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.qtab.is-on:hover { color: var(--accent-ink); }
 .qtabs-panel {
-  background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
-  padding: clamp(1.6rem, 3vw, 2.4rem); min-height: 168px;
+  background: var(--accent-soft); border: 1px solid oklch(from var(--accent) 0.82 0.12 h);
+  border-radius: var(--radius-lg); padding: clamp(1.6rem, 3vw, 2.4rem); min-height: 168px;
 }
+.qtabs-tags .service-tag-item { background: var(--white); }
+html[data-theme="dark"] .qtab:hover { border-color: var(--accent); color: var(--accent); }
+html[data-theme="dark"] .qtabs-panel { border-color: oklch(0.34 0.07 105); }
+html[data-theme="dark"] .qtabs-tags .service-tag-item { background: var(--gray-100); }
 .qtabs-num {
   display: block; font-family: var(--font-serif); font-style: italic; font-weight: 700;
   font-size: 2.6rem; line-height: 1; color: var(--accent-ink); margin-bottom: 0.4rem;
