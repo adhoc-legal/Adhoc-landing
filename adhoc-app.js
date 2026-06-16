@@ -100,6 +100,32 @@
     setInterval(upd, 60000);
   })();
 
+  /* ── Pestañas "¿Qué es la Ley?" ── */
+  (function () {
+    var panel = document.getElementById('qPanel');
+    var tabs = document.querySelectorAll('.qtab');
+    if (!panel || !tabs.length) return;
+    var FACTS = [
+      { n: '01', h: 'Chile estrena su "GDPR"', p: 'La Ley 21.719 reemplaza a la antigua Ley 19.628 y eleva la exigencia para cualquier empresa que trate datos personales.', t: ['GDPR chileno', 'Reemplaza la Ley 19.628'] },
+      { n: '02', h: 'Aplica a casi todas las empresas', p: 'Cualquiera que recopile datos de clientes, usuarios o trabajadores: e-commerce, apps, clínicas, fintech y pymes, sin importar el tamaño.', t: ['E-commerce', 'Apps', 'Pymes', 'Salud'] },
+      { n: '03', h: 'Multas de hasta 20.000 UTM', p: 'Las infracciones más graves llegan a cerca de $1.400 millones. En caso de reincidencia, hasta el 4% de tus ingresos anuales.', t: ['Hasta 20.000 UTM', 'Reincidencia: 4% de ingresos'] },
+      { n: '04', h: 'Vigente el 1 de diciembre de 2026', p: 'Las pymes tienen una ventana de 12 meses con primeras infracciones amonestadas, pero la preparación parte hoy.', t: ['1 de diciembre de 2026', 'Ventana pyme: 12 meses'] }
+    ];
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function render(i) {
+      var f = FACTS[i];
+      var tags = f.t.map(function (x) { return '<span class="service-tag-item">' + esc(x) + '</span>'; }).join('');
+      panel.innerHTML = '<span class="qtabs-num">' + f.n + '</span><h3 class="qtabs-h">' + esc(f.h) + '</h3><p class="qtabs-p">' + esc(f.p) + '</p><div class="qtabs-tags">' + tags + '</div>';
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('is-on'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('is-on'); tab.setAttribute('aria-selected', 'true');
+        render(i);
+      });
+    });
+  })();
+
   /* ── REVEAL on scroll ── */
   function setupReveal() {
     document.querySelectorAll('[data-stagger]').forEach(function (group) {

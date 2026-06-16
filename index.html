@@ -147,12 +147,94 @@
   </div>
 </section>
 
-<!-- STATS BAND -->
-<section id="stats" aria-label="Cifras del estudio">
-  <div class="stats-grid">
-    <div class="stat reveal"><div class="stat-num"><span data-count="400" data-decimals="0">400</span><span class="plus">+</span></div><div class="stat-label">Clientes asesorados</div></div>
-    <div class="stat reveal" data-delay="180"><div class="stat-num"><span data-count="5.0" data-decimals="1">5.0</span></div><div class="stat-label">Valoración promedio</div></div>
-    <div class="stat reveal" data-delay="270"><div class="stat-num">24<span style="font-size:0.55em;">h</span></div><div class="stat-label">Respuesta a consultas</div></div>
+<!-- EVALUACIÓN LEY 21.719 -->
+<section id="evaluacion">
+  <div class="section-inner">
+    <div class="fnl-head">
+      <div class="eyebrow reveal">Ley N° 21.719 · Protección de datos</div>
+      <h2 class="section-title reveal" data-delay="80">¿Tu organización cumple<br/>con la <span class="accent">nueva ley de datos</span>?</h2>
+      <p class="lede reveal" data-delay="160">Responde 7 preguntas y descubre en menos de dos minutos tu nivel de exposición frente a la nueva Ley de Protección de Datos de Chile.</p>
+    </div>
+
+    <div class="fnl reveal" data-delay="220">
+      <section class="screen" id="fnl-quiz">
+        <div class="card">
+          <div class="brand"><span class="wm"><span class="br">[</span>ADHOC<span class="br">]</span></span><span class="legal-tag">Legal</span></div>
+          <div>
+            <h3 class="q-title">Evaluación de cumplimiento Ley N° 21.719</h3>
+            <p class="q-sub">Responde 7 preguntas y descubre el nivel de exposición de tu organización frente a la nueva Ley de Protección de Datos.</p>
+            <div class="step-row">
+              <span class="step-label" id="fnl-step">Paso 1 de 7</span>
+              <span class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            </div>
+            <div class="progress"><i id="fnl-progress"></i></div>
+          </div>
+          <div class="question" id="fnl-host" aria-live="polite"></div>
+          <div class="legal" id="fnl-legal" hidden>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <div><b>Aviso legal importante</b><p>Esta herramienta es de carácter informativo y orientativo. No constituye asesoría jurídica ni reemplaza la revisión de un abogado sobre tu caso particular.</p></div>
+          </div>
+          <div class="nav-row"><button class="back" id="fnl-quiz-back" hidden>‹ Anterior</button></div>
+        </div>
+      </section>
+
+      <section class="screen" id="fnl-capture">
+        <div class="card">
+          <div class="brand"><span class="wm"><span class="br">[</span>ADHOC<span class="br">]</span></span><span class="legal-tag">Legal</span></div>
+          <div class="cap-head">
+            <span class="eyebrow">Casi listo</span>
+            <h3>Estás a un paso de tu resultado</h3>
+            <p>Déjanos dónde enviarte tu evaluación preliminar y las recomendaciones para tu organización.</p>
+          </div>
+          <div class="field" id="fnl-field-name">
+            <label for="fnl-name">Nombre</label>
+            <input type="text" id="fnl-name" placeholder="Tu nombre" />
+            <span class="err">Ingresa tu nombre (mínimo 2 caracteres).</span>
+          </div>
+          <div class="field" id="fnl-field-phone">
+            <label for="fnl-phone">WhatsApp</label>
+            <div class="phone-wrap"><span class="phone-prefix">+56</span><input type="tel" id="fnl-phone" inputmode="numeric" placeholder="9 1234 5678" /></div>
+            <span class="err">Ingresa un número válido (8 o 9 dígitos).</span>
+          </div>
+          <div class="field" id="fnl-field-email">
+            <label for="fnl-email">Correo electrónico</label>
+            <input type="email" id="fnl-email" placeholder="tu@correo.cl" />
+            <span class="err">Ingresa un correo electrónico válido.</span>
+          </div>
+          <div style="margin-top:1.5rem;"><button class="btn btn-primary" id="fnl-submit"><span class="lbl">Ver mi resultado</span> <span class="arr">→</span></button></div>
+          <p class="microcopy">🔒 Confidencial · No compartimos tus datos</p>
+          <div class="nav-row"><button class="back" id="fnl-cap-back">‹ Anterior</button></div>
+        </div>
+      </section>
+
+      <section class="screen" id="fnl-result">
+        <div class="card">
+          <div class="nav-row" style="margin-top:0;margin-bottom:.3rem;"><button class="back" id="fnl-restart">‹ Volver a empezar</button></div>
+          <div class="res-hero">
+            <span class="eyebrow">Resultado preliminar</span>
+            <div class="res-icon" id="fnl-res-icon"></div>
+            <h3 class="res-title" id="fnl-res-title"></h3>
+            <p class="res-sub" id="fnl-res-sub"></p>
+          </div>
+          <div class="meter">
+            <div class="meter-scale"><span>Bajo</span><span>Medio</span><span>Alto</span></div>
+            <div class="meter-track"><span class="meter-fill" id="fnl-fill"></span></div>
+            <div class="meter-readout"><span class="meter-pct" id="fnl-pct">0%</span><span class="meter-word" id="fnl-word"></span></div>
+          </div>
+          <div class="offer">
+            <span class="eyebrow">Informe de cumplimiento Ley N° 21.719</span>
+            <div class="offer-price-row"><span class="offer-price">$49.990 <span class="cur">CLP</span></span></div>
+            <ul class="offer-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Informe con tu nivel de cumplimiento frente a la Ley N° 21.719</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Identificación de tus brechas y riesgos de sanción</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Recomendaciones priorizadas para empezar a regularizar</li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Una conversación con un abogado del estudio para tus dudas</li>
+            </ul>
+            <a class="btn btn-primary" id="offer-cta" href="#contacto">QUIERO MI INFORME <span class="arr">→</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </section>
 
@@ -162,67 +244,18 @@
     <div class="eyebrow reveal">Ley 21.719 · Protección de datos</div>
     <h2 class="section-title reveal" data-delay="80">¿Qué es la Ley 21.719<br/>y por qué te afecta?</h2>
 
-    <div class="tldr reveal" data-delay="140">
-      <div class="tldr-tag">Lo esencial</div>
-      <ul>
-        <li><strong>Entra en vigencia el 1 de diciembre de 2026.</strong> Prepararse toma meses, así que el momento de partir es ahora.</li>
-        <li><strong>Es el "GDPR chileno".</strong> Reemplaza a la antigua Ley 19.628 y sube el estándar de cómo se tratan los datos personales.</li>
-        <li><strong>Aplica a casi todas las empresas</strong> que tratan datos de personas: e-commerce, apps, clínicas, fintech y pymes.</li>
-        <li><strong>Multas de hasta 20.000 UTM</strong> (cerca de $1.400 millones), con sanciones mayores por reincidencia.</li>
-        <li><strong>Por dónde partir:</strong> un diagnóstico que muestre tus brechas y un plan concreto para cerrarlas.</li>
-      </ul>
-    </div>
-
-    <div class="services-grid" data-stagger="120" style="margin-top:3rem;">
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">01</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">Qué cambia</div>
-        <p class="service-text">Chile estrena su versión del estándar europeo de protección de datos. La Ley 21.719 reemplaza a la Ley 19.628 y eleva la exigencia para cualquier empresa que trate datos personales.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">GDPR chileno</span>
-          <span class="service-tag-item">Reemplaza la Ley 19.628</span>
-        </div>
+    <div class="qtabs reveal" data-delay="140">
+      <div class="qtabs-nav" role="tablist" aria-label="Aspectos de la Ley 21.719">
+        <button class="qtab is-on" type="button" role="tab" aria-selected="true" data-q="0">Qué cambia</button>
+        <button class="qtab" type="button" role="tab" aria-selected="false" data-q="1">A quién aplica</button>
+        <button class="qtab" type="button" role="tab" aria-selected="false" data-q="2">Cuánto arriesgas</button>
+        <button class="qtab" type="button" role="tab" aria-selected="false" data-q="3">Hasta cuándo</button>
       </div>
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">02</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">A quién aplica</div>
-        <p class="service-text">A toda organización que recopile o use datos de clientes, usuarios o trabajadores. E-commerce, apps, clínicas, fintech y pymes, sin importar el tamaño.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">E-commerce</span>
-          <span class="service-tag-item">Apps</span>
-          <span class="service-tag-item">Pymes</span>
-          <span class="service-tag-item">Salud</span>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">03</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">Cuánto arriesgas</div>
-        <p class="service-text">Las infracciones más graves llegan a multas de hasta 20.000 UTM, cerca de $1.400 millones. En caso de reincidencia, hasta el 4% de tus ingresos anuales.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">Hasta 20.000 UTM</span>
-          <span class="service-tag-item">Reincidencia: 4% de ingresos</span>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">04</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">Hasta cuándo</div>
-        <p class="service-text">La ley entra en vigencia el 1 de diciembre de 2026. Las pymes tienen una ventana de 12 meses con primeras infracciones amonestadas, pero la preparación parte hoy.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">1 de diciembre de 2026</span>
-          <span class="service-tag-item">Ventana pyme: 12 meses</span>
-        </div>
+      <div class="qtabs-panel" id="qPanel" role="tabpanel" aria-live="polite">
+        <span class="qtabs-num">01</span>
+        <h3 class="qtabs-h">Chile estrena su "GDPR"</h3>
+        <p class="qtabs-p">La Ley 21.719 reemplaza a la antigua Ley 19.628 y eleva la exigencia para cualquier empresa que trate datos personales.</p>
+        <div class="qtabs-tags"><span class="service-tag-item">GDPR chileno</span><span class="service-tag-item">Reemplaza la Ley 19.628</span></div>
       </div>
     </div>
   </div>
@@ -271,79 +304,42 @@
       </div>
       <p class="lede reveal" data-delay="160">Primero respondes el diagnóstico gratis. Si quieres ir más a fondo, tu informe te muestra en qué estás cumpliendo, dónde tienes brechas y cómo empezar a cerrarlas.</p>
     </div>
-    <div class="informe-card plan-card plan-card--star reveal" data-delay="120">
-      <div class="plan-badge">Disponible ahora</div>
-      <div class="plan-name">Informe de cumplimiento Ley 21.719</div>
-      <div class="plan-price">$49.990 <span class="plan-cur">CLP</span></div>
-      <p class="plan-desc">Un informe en lenguaje simple sobre tu nivel de cumplimiento, más una conversación con un abogado del estudio para resolver tus dudas.</p>
-      <ul class="informe-list">
-        <li>Tu nivel de cumplimiento frente a la Ley 21.719</li>
-        <li>Tus principales brechas y riesgos de sanción</li>
-        <li>Recomendaciones priorizadas para empezar a regularizar</li>
-        <li>Una conversación con un abogado del estudio</li>
-      </ul>
-      <a href="#evaluacion" class="plan-cta">Empieza con el diagnóstico gratis <span class="arr">→</span></a>
+    <div class="informe-deal reveal" data-delay="120">
+      <div class="deal-main">
+        <span class="deal-badge">Disponible ahora</span>
+        <h3 class="deal-name">Informe de cumplimiento Ley 21.719</h3>
+        <p class="deal-lead">Un informe en lenguaje simple sobre tu nivel de cumplimiento, más una conversación con un abogado del estudio para resolver tus dudas.</p>
+        <ul class="deal-list">
+          <li>Tu nivel de cumplimiento frente a la Ley 21.719</li>
+          <li>Tus principales brechas y riesgos de sanción</li>
+          <li>Recomendaciones priorizadas para empezar a regularizar</li>
+          <li>Una conversación con un abogado del estudio</li>
+        </ul>
+      </div>
+      <aside class="deal-buy">
+        <span class="deal-from">Informe completo</span>
+        <span class="deal-price">$49.990</span>
+        <span class="deal-cur">CLP · pago único</span>
+        <a href="#evaluacion" class="btn btn-primary deal-cta">Empieza gratis <span class="arr">→</span></a>
+        <p class="deal-reassure">El diagnóstico de 7 preguntas es gratis. El informe llega después, solo si decides avanzar.</p>
+      </aside>
     </div>
-    <p class="planes-note reveal">El diagnóstico de 7 preguntas es gratis. El informe llega después, solo si decides avanzar.</p>
   </div>
 </section>
 
-<!-- SERVICIOS -->
-<section id="servicios">
+<!-- OTRAS ÁREAS (secundario) -->
+<section id="servicios" class="otras">
   <div class="section-inner">
-    <div class="services-top">
-      <div>
-        <div class="eyebrow reveal">Otras áreas</div>
-        <h2 class="section-title reveal" data-delay="80">También te acompañamos<br/>más allá de los datos.</h2>
+    <div class="otras-row reveal">
+      <div class="otras-copy">
+        <div class="eyebrow">Otras áreas</div>
+        <p class="otras-text">Nuestro foco es la <strong>Ley 21.719</strong>, pero también asesoramos a empresas en derecho civil, constitución de sociedades y contratos.</p>
       </div>
-      <p class="lede reveal" data-delay="160">
-        Nuestro foco es el cumplimiento de la Ley 21.719, pero seguimos asesorando a empresas en derecho civil, constitución de sociedades y contratos.
-      </p>
-    </div>
-    <div class="services-grid" data-stagger="120">
-
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">01</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">Derecho Civil</div>
-        <p class="service-text">Contratos, obligaciones, responsabilidad civil, sucesiones y bienes raíces. Representación y asesoría integral en el ámbito del derecho privado.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">Contratos</span>
-          <span class="service-tag-item">Sucesiones</span>
-          <span class="service-tag-item">Bienes raíces</span>
-        </div>
+      <div class="otras-tags">
+        <span class="service-tag-item">Derecho civil</span>
+        <span class="service-tag-item">Sociedades · SpA, SRL, SA</span>
+        <span class="service-tag-item">Contratos</span>
       </div>
-
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">02</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">Asesoría Empresarial</div>
-        <p class="service-text">Acompañamos a empresas en contratos comerciales, revisión de acuerdos, compliance y resolución de conflictos corporativos.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">Contratos comerciales</span>
-          <span class="service-tag-item">Compliance</span>
-        </div>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-head">
-          <div class="service-num">03</div>
-          <svg class="service-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
-        </div>
-        <div class="service-title">Constitución de Sociedades</div>
-        <p class="service-text">Gestión completa de SpA, SRL y SA: desde la elección del tipo societario y redacción de estatutos hasta la inscripción final.</p>
-        <div class="service-tags">
-          <span class="service-tag-item">SpA</span>
-          <span class="service-tag-item">SRL</span>
-          <span class="service-tag-item">SA</span>
-          <span class="service-tag-item">Modificaciones</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -446,97 +442,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- EVALUACIÓN LEY 21.719 -->
-<section id="evaluacion">
-  <div class="section-inner">
-    <div class="fnl-head">
-      <div class="eyebrow reveal">Ley N° 21.719 · Protección de datos</div>
-      <h2 class="section-title reveal" data-delay="80">¿Tu organización cumple<br/>con la <span class="accent">nueva ley de datos</span>?</h2>
-      <p class="lede reveal" data-delay="160">Responde 7 preguntas y descubre en menos de dos minutos tu nivel de exposición frente a la nueva Ley de Protección de Datos de Chile.</p>
-    </div>
-
-    <div class="fnl reveal" data-delay="220">
-      <section class="screen" id="fnl-quiz">
-        <div class="card">
-          <div class="brand"><span class="wm"><span class="br">[</span>ADHOC<span class="br">]</span></span><span class="legal-tag">Legal</span></div>
-          <div>
-            <h3 class="q-title">Evaluación de cumplimiento Ley N° 21.719</h3>
-            <p class="q-sub">Responde 7 preguntas y descubre el nivel de exposición de tu organización frente a la nueva Ley de Protección de Datos.</p>
-            <div class="step-row">
-              <span class="step-label" id="fnl-step">Paso 1 de 7</span>
-              <span class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-            </div>
-            <div class="progress"><i id="fnl-progress"></i></div>
-          </div>
-          <div class="question" id="fnl-host" aria-live="polite"></div>
-          <div class="legal" id="fnl-legal" hidden>
-            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-            <div><b>Aviso legal importante</b><p>Esta herramienta es de carácter informativo y orientativo. No constituye asesoría jurídica ni reemplaza la revisión de un abogado sobre tu caso particular.</p></div>
-          </div>
-          <div class="nav-row"><button class="back" id="fnl-quiz-back" hidden>‹ Anterior</button></div>
-        </div>
-      </section>
-
-      <section class="screen" id="fnl-capture">
-        <div class="card">
-          <div class="brand"><span class="wm"><span class="br">[</span>ADHOC<span class="br">]</span></span><span class="legal-tag">Legal</span></div>
-          <div class="cap-head">
-            <span class="eyebrow">Casi listo</span>
-            <h3>Estás a un paso de tu resultado</h3>
-            <p>Déjanos dónde enviarte tu evaluación preliminar y las recomendaciones para tu organización.</p>
-          </div>
-          <div class="field" id="fnl-field-name">
-            <label for="fnl-name">Nombre</label>
-            <input type="text" id="fnl-name" placeholder="Tu nombre" />
-            <span class="err">Ingresa tu nombre (mínimo 2 caracteres).</span>
-          </div>
-          <div class="field" id="fnl-field-phone">
-            <label for="fnl-phone">WhatsApp</label>
-            <div class="phone-wrap"><span class="phone-prefix">+56</span><input type="tel" id="fnl-phone" inputmode="numeric" placeholder="9 1234 5678" /></div>
-            <span class="err">Ingresa un número válido (8 o 9 dígitos).</span>
-          </div>
-          <div class="field" id="fnl-field-email">
-            <label for="fnl-email">Correo electrónico</label>
-            <input type="email" id="fnl-email" placeholder="tu@correo.cl" />
-            <span class="err">Ingresa un correo electrónico válido.</span>
-          </div>
-          <div style="margin-top:1.5rem;"><button class="btn btn-primary" id="fnl-submit"><span class="lbl">Ver mi resultado</span> <span class="arr">→</span></button></div>
-          <p class="microcopy">🔒 Confidencial · No compartimos tus datos</p>
-          <div class="nav-row"><button class="back" id="fnl-cap-back">‹ Anterior</button></div>
-        </div>
-      </section>
-
-      <section class="screen" id="fnl-result">
-        <div class="card">
-          <div class="nav-row" style="margin-top:0;margin-bottom:.3rem;"><button class="back" id="fnl-restart">‹ Volver a empezar</button></div>
-          <div class="res-hero">
-            <span class="eyebrow">Resultado preliminar</span>
-            <div class="res-icon" id="fnl-res-icon"></div>
-            <h3 class="res-title" id="fnl-res-title"></h3>
-            <p class="res-sub" id="fnl-res-sub"></p>
-          </div>
-          <div class="meter">
-            <div class="meter-scale"><span>Bajo</span><span>Medio</span><span>Alto</span></div>
-            <div class="meter-track"><span class="meter-fill" id="fnl-fill"></span></div>
-            <div class="meter-readout"><span class="meter-pct" id="fnl-pct">0%</span><span class="meter-word" id="fnl-word"></span></div>
-          </div>
-          <div class="offer">
-            <span class="eyebrow">Informe de cumplimiento Ley N° 21.719</span>
-            <div class="offer-price-row"><span class="offer-price">$49.990 <span class="cur">CLP</span></span></div>
-            <ul class="offer-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Informe con tu nivel de cumplimiento frente a la Ley N° 21.719</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Identificación de tus brechas y riesgos de sanción</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Recomendaciones priorizadas para empezar a regularizar</li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Una conversación con un abogado del estudio para tus dudas</li>
-            </ul>
-            <a class="btn btn-primary" id="offer-cta" href="#contacto">QUIERO MI INFORME <span class="arr">→</span></a>
-          </div>
-        </div>
-      </section>
     </div>
   </div>
 </section>

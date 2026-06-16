@@ -1001,3 +1001,76 @@ html[data-theme="dark"] .faq-item summary::after { color: var(--accent); }
 }
 html[data-theme="dark"] .informe-list li::before { color: var(--accent); }
 
+/* ============================================================
+   REDISEÑO — tipografía editorial (serif) + interacción
+   ============================================================ */
+
+/* Titulares en serif Playfair (opción B) */
+.hero-title, .section-title { font-family: var(--font-serif); letter-spacing: -0.005em; }
+.hero-title { line-height: 1.06; }
+.section-title { line-height: 1.1; }
+
+/* Pestañas "¿Qué es la Ley?" (interacción de la opción A) */
+.qtabs { margin-top: 2.4rem; }
+.qtabs-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.6rem; }
+.qtab {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+  border: 1.5px solid var(--gray-200); background: var(--white); color: var(--black);
+  padding: 0.7rem 1.15rem; border-radius: 50px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.qtab:hover { border-color: var(--black); transform: translateY(-1px); }
+.qtab.is-on { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.qtabs-panel {
+  background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  padding: clamp(1.6rem, 3vw, 2.4rem); min-height: 168px;
+}
+.qtabs-num {
+  display: block; font-family: var(--font-serif); font-style: italic; font-weight: 700;
+  font-size: 2.6rem; line-height: 1; color: var(--accent-ink); margin-bottom: 0.4rem;
+}
+.qtabs-h { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15; margin-bottom: 0.5rem; }
+.qtabs-p { color: var(--gray-600); max-width: 64ch; line-height: 1.7; margin-bottom: 1.1rem; }
+.qtabs-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+html[data-theme="dark"] .qtabs-num { color: var(--accent); }
+
+/* Informe (oferta con panel de precio) */
+.informe-deal {
+  display: grid; grid-template-columns: 1.55fr 1fr; margin-top: 2.6rem;
+  border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--white); transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.informe-deal:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.deal-main { padding: clamp(1.6rem, 3vw, 2.4rem); }
+.deal-badge {
+  display: inline-block; background: var(--accent); color: var(--accent-ink);
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 50px; margin-bottom: 1.1rem;
+}
+.deal-name { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15; margin-bottom: 0.6rem; }
+.deal-lead { color: var(--gray-600); line-height: 1.65; max-width: 48ch; margin-bottom: 1.4rem; }
+.deal-list { list-style: none; display: grid; gap: 0.6rem; }
+.deal-list li { position: relative; padding-left: 1.7rem; color: var(--black); line-height: 1.5; }
+.deal-list li::before { content: '✓'; position: absolute; left: 0; top: 0.05em; color: var(--accent-ink); font-weight: 700; }
+.deal-buy {
+  background: var(--ink); color: #fff; padding: clamp(1.6rem, 3vw, 2.4rem);
+  display: flex; flex-direction: column; justify-content: center; gap: 0.45rem;
+}
+.deal-from { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.deal-price { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2.6rem, 5vw, 3.4rem); line-height: 1; color: var(--accent); }
+.deal-cur { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 0.7rem; }
+.deal-cta { width: 100%; justify-content: center; margin-top: 0.2rem; }
+.deal-reassure { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin-top: 0.3rem; }
+html[data-theme="dark"] .deal-list li::before { color: var(--accent); }
+@media (max-width: 760px) { .informe-deal { grid-template-columns: 1fr; } }
+
+/* Otras áreas (banda compacta, secundaria) */
+.otras { padding-top: clamp(3rem, 5vw, 4.5rem); padding-bottom: clamp(3rem, 5vw, 4.5rem); }
+.otras-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  border-top: 1px solid var(--gray-200); padding-top: 2.2rem;
+}
+.otras-copy .eyebrow { margin-bottom: 0.7rem; }
+.otras-text { color: var(--gray-600); max-width: 52ch; line-height: 1.6; }
+.otras-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
