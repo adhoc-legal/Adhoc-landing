@@ -44,6 +44,88 @@
     }, 1300);
   }
 
+  /* ── CONTADOR REGRESIVO Ley 21.719 ── */
+  (function () {
+    var box = document.getElementById('countdown');
+    if (!box) return;
+    var cd = document.querySelector('.hero-countdown');
+    // 1 de diciembre de 2026, 00:00 hora de Chile continental (UTC-3)
+    var target = new Date('2026-12-01T00:00:00-03:00').getTime();
+    var elD = box.querySelector('[data-cd="days"]');
+    var elH = box.querySelector('[data-cd="hours"]');
+    var elM = box.querySelector('[data-cd="mins"]');
+    var elS = box.querySelector('[data-cd="secs"]');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    var timer;
+    function tick() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        if (timer) clearInterval(timer);
+        if (cd) {
+          var lbl = cd.querySelector('.cd-label');
+          if (lbl) lbl.textContent = 'La Ley 21.719 ya está vigente.';
+        }
+        box.innerHTML = '<a class="cd-live" href="#evaluacion">Ponte al día ahora →</a>';
+        return;
+      }
+      var s = Math.floor(diff / 1000);
+      var d = Math.floor(s / 86400);
+      var h = Math.floor((s % 86400) / 3600);
+      var m = Math.floor((s % 3600) / 60);
+      var sec = s % 60;
+      if (elD) elD.textContent = d;
+      if (elH) elH.textContent = pad(h);
+      if (elM) elM.textContent = pad(m);
+      if (elS) elS.textContent = pad(sec);
+    }
+    tick();
+    timer = setInterval(tick, 1000);
+  })();
+
+  /* ── Días restantes en la barra de anuncio ── */
+  (function () {
+    var el = document.getElementById('announce-days');
+    if (!el) return;
+    var target = new Date('2026-12-01T00:00:00-03:00').getTime();
+    function upd() {
+      var diff = target - Date.now();
+      if (diff <= 0) {
+        var bar = document.getElementById('announce');
+        if (bar) bar.innerHTML = '<span class="announce-txt">La Ley 21.719 ya está vigente. Ponte al día ahora.</span><span class="announce-cta">Evalúa tu empresa <span class="arr">&#8594;</span></span>';
+        return;
+      }
+      el.textContent = Math.floor(diff / 86400000);
+    }
+    upd();
+    setInterval(upd, 60000);
+  })();
+
+  /* ── Pestañas "¿Qué es la Ley?" ── */
+  (function () {
+    var panel = document.getElementById('qPanel');
+    var tabs = document.querySelectorAll('.qtab');
+    if (!panel || !tabs.length) return;
+    var FACTS = [
+      { n: '01', h: 'Chile estrena su "GDPR"', p: 'La Ley 21.719 reemplaza a la antigua Ley 19.628 y eleva la exigencia para cualquier empresa que trate datos personales.', t: ['GDPR chileno', 'Reemplaza la Ley 19.628'] },
+      { n: '02', h: 'Aplica a casi todas las empresas', p: 'Cualquiera que recopile datos de clientes, usuarios o trabajadores: e-commerce, apps, clínicas, fintech y pymes, sin importar el tamaño.', t: ['E-commerce', 'Apps', 'Pymes', 'Salud'] },
+      { n: '03', h: 'Multas de hasta 20.000 UTM', p: 'Las infracciones más graves llegan a cerca de $1.400 millones. En caso de reincidencia, hasta el 4% de tus ingresos anuales.', t: ['Hasta 20.000 UTM', 'Reincidencia: 4% de ingresos'] },
+      { n: '04', h: 'Vigente el 1 de diciembre de 2026', p: 'Las pymes tienen una ventana de 12 meses con primeras infracciones amonestadas, pero la preparación parte hoy.', t: ['1 de diciembre de 2026', 'Ventana pyme: 12 meses'] }
+    ];
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function render(i) {
+      var f = FACTS[i];
+      var tags = f.t.map(function (x) { return '<span class="service-tag-item">' + esc(x) + '</span>'; }).join('');
+      panel.innerHTML = '<span class="qtabs-num">' + f.n + '</span><h3 class="qtabs-h">' + esc(f.h) + '</h3><p class="qtabs-p">' + esc(f.p) + '</p><div class="qtabs-tags">' + tags + '</div>';
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('is-on'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('is-on'); tab.setAttribute('aria-selected', 'true');
+        render(i);
+      });
+    });
+  })();
+
   /* ── REVEAL on scroll ── */
   function setupReveal() {
     document.querySelectorAll('[data-stagger]').forEach(function (group) {

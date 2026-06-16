@@ -190,8 +190,12 @@ section { padding: clamp(5rem, 9vw, 9rem) var(--pad-x); }
    ============================================================ */
 #hero {
   min-height: 100svh; display: flex; align-items: center; justify-content: center;
-  padding: 110px var(--pad-x) 4rem; position: relative; overflow: hidden;
+  padding: 130px var(--pad-x) 4rem; position: relative; overflow: hidden;
   background: var(--white);
+}
+/* Si el contenido del hero supera la altura visible, anclar arriba para no cortar el titular */
+@media (max-height: 860px) {
+  #hero { align-items: flex-start; }
 }
 #hero::before {
   content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -274,6 +278,39 @@ section { padding: clamp(5rem, 9vw, 9rem) var(--pad-x); }
 [data-hero="editorial"] .hero-actions { justify-content: flex-start; }
 [data-hero="editorial"] .hero-trust { justify-content: flex-start; }
 [data-hero="editorial"] .hero-title .accent { white-space: normal; }
+
+/* ── Contador regresivo Ley 21.719 ── */
+.hero-countdown {
+  display: flex; flex-direction: column; align-items: center; gap: 0.55rem;
+  margin: 0 auto 2rem;
+}
+.hero-countdown .cd-label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gray-500); text-align: center; max-width: 40ch; text-wrap: balance;
+}
+.cd-units { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; }
+.cd-unit {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  min-width: 54px; padding: 0.55rem 0.5rem;
+  background: var(--ink); border-radius: var(--radius-sm); box-shadow: var(--shadow-xs);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.cd-num {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(1.25rem, 3vw, 1.65rem); line-height: 1;
+  color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+}
+.cd-tag {
+  font-size: 0.55rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.cd-live {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  color: var(--accent-ink); text-decoration: none;
+}
+@media (max-width: 480px) {
+  .cd-unit { min-width: 48px; padding: 0.5rem 0.35rem; }
+}
 
 /* ============================================================
    STATS BAND
@@ -848,4 +885,207 @@ html[data-theme="dark"] .float-cta {
 .theme-toggle .icon-moon { display: block; }
 html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ============================================================
+   FOCO LEY 21.719 — barra de anuncio, secciones de contenido,
+   planes y preguntas frecuentes
+   ============================================================ */
+:root { --ann-h: 42px; }
+html { scroll-padding-top: calc(var(--ann-h) + 86px); }
+
+/* ── Barra de anuncio (urgencia, fija sobre la nav) ── */
+.announce {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+  min-height: var(--ann-h);
+  display: flex; align-items: center; justify-content: center; gap: 0.9rem; flex-wrap: wrap;
+  padding: 6px 16px; line-height: 1.3;
+  background: var(--ink); color: #fff;
+  font-size: 0.8rem; font-weight: 500; text-align: center; text-decoration: none;
+}
+.announce strong { color: var(--accent); font-weight: 700; }
+.announce-cta { font-weight: 700; color: var(--accent); white-space: nowrap; }
+.announce .arr { display: inline-block; transition: transform 0.25s var(--ease); }
+.announce:hover .announce-cta .arr { transform: translateX(4px); }
+nav { top: var(--ann-h); }
+@media (max-width: 760px) {
+  :root { --ann-h: 54px; }
+  .announce { font-size: 0.72rem; gap: 0.35rem; }
+  .announce-cta { display: none; }
+}
+@media (max-width: 960px) {
+  .nav-links.open { top: calc(var(--ann-h) + 66px); }
+}
+
+/* ── Hero: el H1 nuevo es más largo, lo bajamos un punto ── */
+.hero-title { font-size: clamp(3rem, 7.5vw, 5.6rem); }
+
+/* ── Caja "Lo esencial" (TL;DR) ── */
+.tldr {
+  background: var(--accent-soft);
+  border: 1px solid oklch(from var(--accent) 0.85 0.10 h);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  max-width: 920px; margin-top: 2.5rem;
+}
+.tldr-tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-ink); margin-bottom: 1rem;
+}
+.tldr ul { list-style: none; display: grid; gap: 0.7rem; }
+.tldr li { position: relative; padding-left: 1.7rem; color: var(--ink); line-height: 1.6; }
+.tldr li::before {
+  content: '✓'; position: absolute; left: 0; top: 0.05em;
+  font-weight: 700; color: var(--accent-ink);
+}
+html[data-theme="dark"] .tldr { border-color: oklch(0.30 0.06 105); }
+html[data-theme="dark"] .tldr-tag,
+html[data-theme="dark"] .tldr li::before { color: var(--accent); }
+html[data-theme="dark"] .tldr li,
+html[data-theme="dark"] .tldr li strong { color: var(--black); }
+
+/* ── Paso / CTA de sección ── */
+.pasos-cta { margin-top: 2.6rem; }
+
+/* ── Planes y precios ── */
+.planes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.6rem; }
+.plan-card {
+  position: relative; display: flex; flex-direction: column; gap: 0.7rem;
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 1.7rem 1.5rem;
+}
+.plan-card--star { border: 2px solid var(--accent); box-shadow: var(--shadow-md); }
+.plan-badge {
+  position: absolute; top: -0.7rem; left: 1.4rem;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.7rem; border-radius: 50px;
+}
+.plan-name { font-family: var(--font-display); font-weight: 700; font-size: 1.12rem; letter-spacing: -0.01em; }
+.plan-price { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--accent-ink); letter-spacing: -0.03em; }
+.plan-cur { font-size: 0.72rem; font-weight: 600; color: var(--gray-500); letter-spacing: 0.04em; }
+.plan-desc { font-size: 0.92rem; color: var(--gray-600); line-height: 1.6; flex: 1; }
+.plan-cta { margin-top: 0.4rem; font-weight: 600; font-size: 0.95rem; color: var(--accent-ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+.plan-cta .arr { transition: transform 0.25s var(--ease); }
+.plan-cta:hover .arr { transform: translateX(4px); }
+.planes-note { margin-top: 1.6rem; color: var(--gray-600); font-size: 0.95rem; }
+.planes-note a { color: var(--accent-ink); font-weight: 600; }
+html[data-theme="dark"] .plan-price, html[data-theme="dark"] .plan-cta, html[data-theme="dark"] .planes-note a { color: var(--accent); }
+@media (max-width: 960px) { .planes-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .planes-grid { grid-template-columns: 1fr; } }
+
+/* ── Preguntas frecuentes (acordeón nativo) ── */
+.faq-list { max-width: 840px; margin-top: 2.2rem; border-top: 1px solid var(--gray-200); }
+.faq-item { border-bottom: 1px solid var(--gray-200); }
+.faq-item summary {
+  cursor: pointer; list-style: none; padding: 1.15rem 0;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--black);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  transition: color 0.2s var(--ease);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover,
+.faq-item[open] > summary { color: var(--accent-ink); }
+.faq-item summary::after {
+  content: '+'; flex-shrink: 0;
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink);
+  font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1;
+  transition: transform 0.25s var(--ease), background 0.2s var(--ease);
+}
+.faq-item summary:hover::after,
+.faq-item[open] summary::after { background: var(--accent); }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 0 1.25rem; color: var(--gray-600); line-height: 1.7; max-width: 72ch; }
+html[data-theme="dark"] .faq-item summary::after { color: var(--accent); }
+html[data-theme="dark"] .faq-item summary:hover::after,
+html[data-theme="dark"] .faq-item[open] summary::after { color: var(--accent-ink); }
+html[data-theme="dark"] .faq-item summary:hover,
+html[data-theme="dark"] .faq-item[open] > summary { color: var(--accent); }
+
+/* ── El informe (tarjeta única, etapa 1) ── */
+.informe-card { max-width: 660px; margin: 2.8rem auto 0; }
+.informe-list { list-style: none; display: grid; gap: 0.6rem; margin: 0.2rem 0 0.7rem; }
+.informe-list li { position: relative; padding-left: 1.7rem; color: var(--gray-600); line-height: 1.55; }
+.informe-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 0.02em;
+  font-weight: 700; color: var(--accent-ink);
+}
+html[data-theme="dark"] .informe-list li::before { color: var(--accent); }
+
+/* ============================================================
+   REDISEÑO — tipografía editorial (serif) + interacción
+   ============================================================ */
+
+/* Titulares en Space Grotesk (sans); la palabra destacada (.accent) queda en serif italic */
+.hero-title, .section-title { font-family: var(--font-display); }
+
+/* Pestañas "¿Qué es la Ley?" (interacción de la opción A) */
+.qtabs { margin-top: 2.4rem; }
+.qtabs-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.6rem; }
+.qtab {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+  border: 1.5px solid var(--gray-200); background: var(--white); color: var(--black);
+  padding: 0.7rem 1.15rem; border-radius: 50px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.qtab:hover { border-color: var(--accent-ink); color: var(--accent-ink); transform: translateY(-1px); }
+.qtab.is-on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.qtab.is-on:hover { color: var(--accent-ink); }
+.qtabs-panel {
+  background: var(--accent-soft); border: 1px solid oklch(from var(--accent) 0.82 0.12 h);
+  border-radius: var(--radius-lg); padding: clamp(1.6rem, 3vw, 2.4rem); min-height: 168px;
+}
+.qtabs-tags .service-tag-item { background: var(--white); }
+html[data-theme="dark"] .qtab:hover { border-color: var(--accent); color: var(--accent); }
+html[data-theme="dark"] .qtabs-panel { border-color: oklch(0.34 0.07 105); }
+html[data-theme="dark"] .qtabs-tags .service-tag-item { background: var(--gray-100); }
+.qtabs-num {
+  display: block; font-family: var(--font-serif); font-style: italic; font-weight: 700;
+  font-size: 2.6rem; line-height: 1; color: var(--accent-ink); margin-bottom: 0.4rem;
+}
+.qtabs-h { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.5rem; }
+.qtabs-p { color: var(--gray-600); max-width: 64ch; line-height: 1.7; margin-bottom: 1.1rem; }
+.qtabs-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+html[data-theme="dark"] .qtabs-num { color: var(--accent); }
+
+/* Informe (oferta con panel de precio) */
+.informe-deal {
+  display: grid; grid-template-columns: 1.55fr 1fr; margin-top: 2.6rem;
+  border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--white); transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.informe-deal:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.deal-main { padding: clamp(1.6rem, 3vw, 2.4rem); }
+.deal-badge {
+  display: inline-block; background: var(--accent); color: var(--accent-ink);
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 50px; margin-bottom: 1.1rem;
+}
+.deal-name { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15; margin-bottom: 0.6rem; }
+.deal-lead { color: var(--gray-600); line-height: 1.65; max-width: 48ch; margin-bottom: 1.4rem; }
+.deal-list { list-style: none; display: grid; gap: 0.6rem; }
+.deal-list li { position: relative; padding-left: 1.7rem; color: var(--black); line-height: 1.5; }
+.deal-list li::before { content: '✓'; position: absolute; left: 0; top: 0.05em; color: var(--accent-ink); font-weight: 700; }
+.deal-buy {
+  background: var(--ink); color: #fff; padding: clamp(1.6rem, 3vw, 2.4rem);
+  display: flex; flex-direction: column; justify-content: center; gap: 0.45rem;
+}
+.deal-from { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.deal-price { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2.6rem, 5vw, 3.4rem); line-height: 1; color: var(--accent); }
+.deal-cur { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 0.7rem; }
+.deal-cta { width: 100%; justify-content: center; margin-top: 0.2rem; }
+.deal-reassure { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.55; margin-top: 0.3rem; }
+html[data-theme="dark"] .deal-list li::before { color: var(--accent); }
+@media (max-width: 760px) { .informe-deal { grid-template-columns: 1fr; } }
+
+/* Estas dos secciones mantienen la tipografía sans original (no serif) */
+#por-que .section-title,
+#servicios .section-title { font-family: var(--font-display); letter-spacing: -0.035em; }
+
+/* Otras áreas (sección secundaria con presencia, sin tarjetas pesadas) */
+.otras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.6rem; }
+.otras-item { padding-top: 1.2rem; border-top: 2px solid var(--accent); }
+.otras-item h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.otras-item p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.6; }
+@media (max-width: 760px) { .otras-grid { grid-template-columns: 1fr; } }
 
