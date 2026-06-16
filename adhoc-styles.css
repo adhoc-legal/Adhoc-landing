@@ -980,16 +980,27 @@ html[data-theme="dark"] .plan-price, html[data-theme="dark"] .plan-cta, html[dat
   cursor: pointer; list-style: none; padding: 1.15rem 0;
   font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--black);
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  transition: color 0.2s var(--ease);
 }
 .faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover,
+.faq-item[open] > summary { color: var(--accent-ink); }
 .faq-item summary::after {
   content: '+'; flex-shrink: 0;
-  font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1; color: var(--accent-ink);
-  transition: transform 0.25s var(--ease);
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink);
+  font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1;
+  transition: transform 0.25s var(--ease), background 0.2s var(--ease);
 }
+.faq-item summary:hover::after,
+.faq-item[open] summary::after { background: var(--accent); }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item p { padding: 0 0 1.25rem; color: var(--gray-600); line-height: 1.7; max-width: 72ch; }
 html[data-theme="dark"] .faq-item summary::after { color: var(--accent); }
+html[data-theme="dark"] .faq-item summary:hover::after,
+html[data-theme="dark"] .faq-item[open] summary::after { color: var(--accent-ink); }
+html[data-theme="dark"] .faq-item summary:hover,
+html[data-theme="dark"] .faq-item[open] > summary { color: var(--accent); }
 
 /* ── El informe (tarjeta única, etapa 1) ── */
 .informe-card { max-width: 660px; margin: 2.8rem auto 0; }
@@ -1005,10 +1016,8 @@ html[data-theme="dark"] .informe-list li::before { color: var(--accent); }
    REDISEÑO — tipografía editorial (serif) + interacción
    ============================================================ */
 
-/* Titulares en serif Playfair (opción B) */
-.hero-title, .section-title { font-family: var(--font-serif); letter-spacing: -0.005em; }
-.hero-title { line-height: 1.06; }
-.section-title { line-height: 1.1; }
+/* Titulares en Space Grotesk (sans); la palabra destacada (.accent) queda en serif italic */
+.hero-title, .section-title { font-family: var(--font-display); }
 
 /* Pestañas "¿Qué es la Ley?" (interacción de la opción A) */
 .qtabs { margin-top: 2.4rem; }
@@ -1029,7 +1038,7 @@ html[data-theme="dark"] .informe-list li::before { color: var(--accent); }
   display: block; font-family: var(--font-serif); font-style: italic; font-weight: 700;
   font-size: 2.6rem; line-height: 1; color: var(--accent-ink); margin-bottom: 0.4rem;
 }
-.qtabs-h { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15; margin-bottom: 0.5rem; }
+.qtabs-h { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.5rem; }
 .qtabs-p { color: var(--gray-600); max-width: 64ch; line-height: 1.7; margin-bottom: 1.1rem; }
 .qtabs-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 html[data-theme="dark"] .qtabs-num { color: var(--accent); }
