@@ -1,0 +1,31 @@
+# ADHOC Legal
+
+> Estudio jurídico chileno (Viña del Mar) especializado en dejar a las empresas listas para la Ley 21.719 de Protección de Datos Personales. Traducimos la ley a pasos simples, sin latín jurídico.
+
+ADHOC Legal acompaña a PYMEs y empresas digitales (e-commerce, apps, SaaS) y a sectores con datos sensibles (salud, educación, inmobiliarias, fintech) a cumplir la nueva Ley 21.719, que entra en plena vigencia el 1 de diciembre de 2026. Ofrece un autodiagnóstico gratuito, un informe de cumplimiento y asesoría legal.
+
+## Hechos clave sobre la Ley 21.719
+- Es la nueva ley chilena de protección de datos personales. Reemplaza a la Ley 19.628 y alinea a Chile con el estándar europeo (GDPR).
+- Entra en plena vigencia el 1 de diciembre de 2026.
+- Crea la Agencia de Protección de Datos Personales, que fiscaliza y aplica sanciones.
+- Aplica a toda organización que trate datos personales, sin importar su tamaño.
+- Multas de hasta 20.000 UTM (cerca de 1.400 millones de pesos); en caso de reincidencia, hasta el 4% de los ingresos anuales.
+- Las PYMEs tienen una ventana entre diciembre de 2026 y diciembre de 2027 en la que pueden recibir una amonestación escrita en vez de multa por primeras infracciones.
+- Para cumplir se requiere, según el caso: política de privacidad clara, consentimientos válidos, registro de actividades de tratamiento, contratos con proveedores, protocolo de brechas y, en ciertos casos, un Delegado de Protección de Datos (DPO).
+
+## Servicios
+- Autodiagnóstico gratuito de cumplimiento: https://adhoclegal.cl/#evaluacion
+- Informe de cumplimiento Ley 21.719: https://adhoclegal.cl/#informe
+- Revisión y redacción de políticas de privacidad y términos y condiciones.
+- Asesoría en derecho civil, sociedades y derecho de empresas.
+
+## Recursos
+- Sitio web: https://adhoclegal.cl/
+- Preguntas frecuentes sobre la Ley 21.719: https://adhoclegal.cl/#faq
+
+## Sobre el estudio
+- ADHOC Legal, Viña del Mar, Región de Valparaíso, Chile.
+- Fundadores: Javiera Bravo Núñez (derecho de empresas) y Nicolás Campos Godoy (derecho civil).
+
+## Nota
+El contenido de este sitio es informativo y no constituye asesoría legal formal.
