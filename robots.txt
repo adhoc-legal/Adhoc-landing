@@ -1,11 +1,11 @@
-# robots.txt — adhoclegal.cl
+# robots.txt de adhoclegal.cl
 # Permitimos el rastreo completo del sitio.
 
 User-agent: *
 Allow: /
 Disallow: /pago-rechazado.html
 
-# Crawlers de IA generativa — los recibimos explícitamente (GEO).
+# Crawlers de IA generativa: los recibimos explícitamente (GEO).
 # Queremos que ChatGPT, Claude, Perplexity, Gemini y Bing puedan
 # leer y citar nuestro contenido sobre la Ley 21.719.
 User-agent: GPTBot
