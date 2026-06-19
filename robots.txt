@@ -1,0 +1,25 @@
+# robots.txt — adhoclegal.cl
+# Permitimos el rastreo completo del sitio.
+
+User-agent: *
+Allow: /
+Disallow: /pago-rechazado.html
+
+# Crawlers de IA generativa — los recibimos explícitamente (GEO).
+# Queremos que ChatGPT, Claude, Perplexity, Gemini y Bing puedan
+# leer y citar nuestro contenido sobre la Ley 21.719.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://adhoclegal.cl/sitemap.xml

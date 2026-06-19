@@ -1,0 +1,293 @@
+/* ============================================================
+   ADHOC — Estilos del Blog
+   Reutiliza los tokens de adhoc-styles.css (se carga antes).
+   Hereda modo oscuro automáticamente vía variables.
+   ============================================================ */
+
+/* ── Layout base ── */
+.blog-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 116px var(--pad-x) 40px;
+}
+.blog-shell--narrow { max-width: 760px; }
+
+/* ── Breadcrumb ── */
+.crumbs {
+  font-size: 0.84rem;
+  color: var(--gray-500);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+.crumbs a { color: var(--gray-600); text-decoration: none; }
+.crumbs a:hover { color: var(--accent-ink); }
+.crumbs .sep { opacity: 0.5; }
+.crumbs [aria-current] { color: var(--black); font-weight: 500; }
+
+/* ── Encabezado de artículo ── */
+.post-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+.post-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 1.1rem;
+}
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  margin-bottom: 2.2rem;
+}
+.post-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-400); }
+.post-meta strong { color: var(--black); font-weight: 600; }
+
+/* ── Respuesta corta / TL;DR (clave para GEO) ── */
+.tldr {
+  border: 1px solid var(--gray-200);
+  border-left: 4px solid var(--accent);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: 1.3rem 1.5rem;
+  margin: 0 0 2.4rem;
+}
+.tldr h2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin: 0 0 0.6rem;
+}
+.tldr p { font-size: 1.04rem; line-height: 1.6; color: var(--black-soft); margin: 0; }
+
+/* ── Tabla de contenidos ── */
+.toc {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  margin: 0 0 2.6rem;
+  background: var(--white);
+}
+.toc-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.7rem; }
+.toc ol { margin: 0; padding-left: 1.1rem; }
+.toc li { margin: 0.35rem 0; }
+.toc a { color: var(--gray-700); text-decoration: none; font-size: 0.96rem; }
+.toc a:hover { color: var(--accent-ink); text-decoration: underline; }
+
+/* ── Cuerpo del artículo (prosa) ── */
+.prose { color: var(--black-soft); font-size: 1.08rem; line-height: 1.75; }
+.prose > * + * { margin-top: 1.25rem; }
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.6vw, 1.85rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  margin-top: 2.8rem;
+  scroll-margin-top: 110px;
+}
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  color: var(--black);
+  margin-top: 1.9rem;
+  scroll-margin-top: 110px;
+}
+.prose p { margin-top: 1.1rem; }
+.prose a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { text-decoration-thickness: 2px; }
+.prose strong { color: var(--black); font-weight: 600; }
+.prose ul, .prose ol { padding-left: 1.4rem; margin-top: 1.1rem; }
+.prose li { margin: 0.5rem 0; }
+.prose li::marker { color: var(--accent-ink); }
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  margin: 1.6rem 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--black);
+}
+
+/* ── Tabla de datos clave ── */
+.keyfacts { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.99rem; }
+.keyfacts caption { text-align: left; font-weight: 600; color: var(--black); margin-bottom: 0.6rem; }
+.keyfacts th, .keyfacts td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+.keyfacts th { background: var(--gray-50); font-weight: 600; color: var(--black); width: 38%; }
+.keyfacts td { color: var(--black-soft); }
+
+/* ── Callout ── */
+.callout {
+  border: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  margin: 1.8rem 0;
+  font-size: 1rem;
+  color: var(--black-soft);
+}
+.callout strong { color: var(--black); }
+
+/* ── CTA hacia el autodiagnóstico ── */
+.cta-box {
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+.cta-box h3 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin: 0 0 0.6rem; }
+.cta-box p { color: var(--gray-300); margin: 0 auto 1.4rem; max-width: 46ch; }
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  transition: transform 0.2s var(--ease);
+}
+.cta-btn:hover { transform: translateY(-2px); }
+
+/* ── FAQ ── */
+.faq { margin-top: 2.6rem; }
+.faq h2 { font-family: var(--font-display); font-size: clamp(1.45rem, 2.6vw, 1.85rem); color: var(--black); }
+.faq details {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 1rem 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 1.05rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--accent-ink); font-size: 1.4rem; line-height: 1; }
+.faq details[open] summary::after { content: '−'; }
+.faq details p { margin-top: 0.8rem; color: var(--black-soft); line-height: 1.65; }
+
+/* ── Caja de autor ── */
+.author-box {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.4rem;
+  margin: 2.6rem 0;
+}
+.author-box img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.author-box .name { font-weight: 600; color: var(--black); }
+.author-box .role { font-size: 0.9rem; color: var(--gray-500); }
+.author-box .bio { font-size: 0.92rem; color: var(--black-soft); margin-top: 0.3rem; }
+
+/* ── Disclaimer ── */
+.disclaimer {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  border-top: 1px solid var(--gray-200);
+  padding-top: 1.2rem;
+  margin-top: 2.4rem;
+  font-style: italic;
+}
+
+/* ── Artículos relacionados ── */
+.related { margin-top: 3rem; }
+.related-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--black); margin-bottom: 1.1rem; }
+
+/* ============================================================
+   Listado del blog (index)
+   ============================================================ */
+.blog-head { max-width: 760px; margin-bottom: 3rem; }
+.blog-head h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+.blog-head .accent { color: var(--accent-ink); }
+.blog-head p { color: var(--gray-600); font-size: 1.12rem; margin-top: 1rem; line-height: 1.6; }
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.4rem;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  text-decoration: none;
+  background: var(--white);
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.post-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: var(--shadow-md); }
+.post-card .tag {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-ink); margin-bottom: 0.8rem;
+}
+.post-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  line-height: 1.25;
+  color: var(--black);
+  margin-bottom: 0.6rem;
+}
+.post-card p { color: var(--gray-600); font-size: 0.96rem; line-height: 1.55; flex-grow: 1; }
+.post-card .read {
+  margin-top: 1.1rem; font-size: 0.9rem; font-weight: 600; color: var(--accent-ink);
+}
+.post-card.is-soon { opacity: 0.62; pointer-events: none; }
+.post-card.is-soon .read { color: var(--gray-500); }
+
+@media (max-width: 640px) {
+  .blog-shell { padding-top: 96px; }
+  .author-box { flex-direction: column; align-items: flex-start; text-align: left; }
+}
+
+/* ============================================================
+   Modo oscuro: --accent-ink es un tono oscuro fijo (no se invierte),
+   así que para texto de acento sobre fondo oscuro usamos --accent.
+   ============================================================ */
+html[data-theme="dark"] .post-eyebrow,
+html[data-theme="dark"] .tldr h2,
+html[data-theme="dark"] .prose a,
+html[data-theme="dark"] .post-card .tag,
+html[data-theme="dark"] .post-card .read,
+html[data-theme="dark"] .toc a:hover,
+html[data-theme="dark"] .crumbs a:hover,
+html[data-theme="dark"] .faq summary::after,
+html[data-theme="dark"] .blog-head .accent {
+  color: var(--accent);
+}
+html[data-theme="dark"] .prose li::marker { color: var(--accent); }
