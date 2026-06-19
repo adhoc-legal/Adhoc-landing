@@ -18,5 +18,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://adhoclegal.cl/blog/multas-ley-21719.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Las entradas del blog se agregan aquí a medida que se publican. -->
 </urlset>
