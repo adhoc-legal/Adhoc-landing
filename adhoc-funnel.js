@@ -259,7 +259,7 @@
       if (tel) tel.value = state.lead.phone ? ('+56 ' + state.lead.phone) : '';
       if (em) em.value = state.lead.email || '';
       if (area) area.value = 'ley21719';
-      if (msg) msg.value = 'Hola, completé la evaluación de la Ley N° 21.719 y mi nivel de exposición fue ' + lv.word + ' (' + pct + '%). Me gustaría obtener mi informe de cumplimiento ($49.990).';
+      if (msg) msg.value = 'Hola, completé la evaluación de la Ley N° 21.719 y mi nivel de exposición fue ' + lv.word + ' (' + pct + '%). Me gustaría obtener mi informe de cumplimiento (desde $99.990).';
       /* el href="#contacto" hace el scroll */
     });
   }
