@@ -1,0 +1,1148 @@
+{
+  "version": "1.0",
+  "producto": "Diagnóstico Base de Cumplimiento Ley 21.719",
+  "config_ui": {
+    "tiempo_estimado": "25 a 35 minutos",
+    "mensaje_bienvenida": "Este cuestionario toma aproximadamente 30 minutos. Tu avance se guarda automáticamente: puedes pausar y retomar cuando quieras. Responde con honestidad; No lo sé también es una respuesta útil.",
+    "mensaje_final": "¡Listo! Recibimos tus respuestas. Tu informe personalizado, revisado y firmado por abogada, llegará a tu correo dentro de 1 día hábil.",
+    "campos_contacto_final": [
+      "nombre",
+      "cargo",
+      "correo",
+      "telefono",
+      "razon_social",
+      "rut_empresa"
+    ]
+  },
+  "secciones": [
+    {
+      "id": "S0",
+      "titulo": "Perfil de la empresa",
+      "preguntas": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ]
+    },
+    {
+      "id": "S1",
+      "titulo": "Datos que trata la empresa",
+      "preguntas": [
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14"
+      ]
+    },
+    {
+      "id": "S2",
+      "titulo": "Finalidades y licitud",
+      "preguntas": [
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19"
+      ]
+    },
+    {
+      "id": "S3",
+      "titulo": "Transparencia",
+      "preguntas": [
+        "P20",
+        "P21",
+        "P22",
+        "P23"
+      ]
+    },
+    {
+      "id": "S4",
+      "titulo": "Derechos de las personas",
+      "preguntas": [
+        "P24",
+        "P25",
+        "P26",
+        "P27"
+      ]
+    },
+    {
+      "id": "S5",
+      "titulo": "Seguridad",
+      "preguntas": [
+        "P28",
+        "P29",
+        "P30",
+        "P31",
+        "P32",
+        "P33"
+      ]
+    },
+    {
+      "id": "S6",
+      "titulo": "Incidentes y brechas",
+      "preguntas": [
+        "P34",
+        "P35",
+        "P36"
+      ]
+    },
+    {
+      "id": "S7",
+      "titulo": "Proveedores que tratan datos",
+      "preguntas": [
+        "P37",
+        "P38",
+        "P39",
+        "P40"
+      ]
+    },
+    {
+      "id": "S8",
+      "titulo": "Transferencias internacionales",
+      "preguntas": [
+        "P41",
+        "P42"
+      ]
+    },
+    {
+      "id": "S9",
+      "titulo": "Marketing y sitio web",
+      "preguntas": [
+        "P43",
+        "P44",
+        "P45",
+        "P46"
+      ]
+    },
+    {
+      "id": "S10",
+      "titulo": "Gobernanza interna",
+      "preguntas": [
+        "P47",
+        "P48",
+        "P49",
+        "P50",
+        "P51"
+      ]
+    },
+    {
+      "id": "S11",
+      "titulo": "Preguntas de tu rubro",
+      "preguntas": []
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "P01",
+      "texto": "Nombre o razón social de la empresa",
+      "tipo": "texto"
+    },
+    {
+      "id": "P02",
+      "texto": "Rubro o industria principal",
+      "tipo": "unica",
+      "opciones": [
+        "Comercio o e-commerce",
+        "Servicios profesionales",
+        "Salud",
+        "Educación",
+        "Tecnología o SaaS",
+        "Financiero o seguros",
+        "Inmobiliario o construcción",
+        "Manufactura",
+        "Gastronomía o turismo",
+        "Otro"
+      ]
+    },
+    {
+      "id": "P03",
+      "texto": "Número de trabajadores",
+      "tipo": "unica",
+      "opciones": [
+        "1 a 9",
+        "10 a 49",
+        "50 a 199",
+        "200 o más"
+      ]
+    },
+    {
+      "id": "P04",
+      "texto": "Ventas anuales aproximadas en UF",
+      "tipo": "unica",
+      "opciones": [
+        "Hasta 2.400",
+        "2.400 a 25.000",
+        "25.000 a 100.000",
+        "Más de 100.000",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P05",
+      "texto": "¿Vende o presta servicios a personas naturales (consumidores finales)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No"
+      ]
+    },
+    {
+      "id": "P06",
+      "texto": "¿Qué presencia digital tiene?",
+      "tipo": "multiple",
+      "opciones": [
+        "Sitio web informativo",
+        "Tienda online",
+        "App móvil",
+        "Redes sociales con venta",
+        "Ninguna"
+      ]
+    },
+    {
+      "id": "P07",
+      "texto": "¿Opera o vende fuera de Chile, o pertenece a un grupo con empresas en el extranjero?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P08",
+      "texto": "¿El tratamiento de datos es parte central del negocio (plataformas, scoring, marketing de bases, tratamiento masivo)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P09",
+      "texto": "¿De qué personas maneja datos?",
+      "tipo": "multiple",
+      "opciones": [
+        "Clientes",
+        "Prospectos o leads",
+        "Trabajadores",
+        "Postulantes",
+        "Proveedores personas naturales",
+        "Usuarios del sitio web",
+        "Menores de edad",
+        "Otros"
+      ]
+    },
+    {
+      "id": "P10",
+      "texto": "¿Qué tipos de datos maneja?",
+      "tipo": "multiple",
+      "opciones": [
+        "Identificación y contacto",
+        "Financieros o comerciales",
+        "Laborales y remuneraciones",
+        "Salud (licencias, exámenes)",
+        "Biométricos (huella, rostro)",
+        "Situación socioeconómica",
+        "Geolocalización",
+        "Imágenes de cámaras",
+        "Historial de compras y navegación",
+        "Otros"
+      ]
+    },
+    {
+      "id": "P11",
+      "texto": "¿Cuántas personas hay aproximadamente en sus bases de datos?",
+      "tipo": "unica",
+      "opciones": [
+        "Menos de 1.000",
+        "1.000 a 10.000",
+        "10.000 a 100.000",
+        "Más de 100.000",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P12",
+      "texto": "¿De dónde provienen los datos que maneja?",
+      "tipo": "multiple",
+      "opciones": [
+        "Entregados directamente por la persona",
+        "Formularios web",
+        "Terceros o partners",
+        "Listas o bases compradas o arrendadas",
+        "Fuentes públicas",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P13",
+      "texto": "¿Tiene un inventario o registro de actividades de tratamiento (RAT) documentado: qué bases de datos existen y para qué usa cada una?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P14",
+      "texto": "¿Usa alguno de estos mecanismos?",
+      "tipo": "multiple",
+      "opciones": [
+        "Cámaras de seguridad",
+        "Control biométrico de asistencia",
+        "Monitoreo de correo o computadores",
+        "GPS en vehículos",
+        "Ninguno"
+      ]
+    },
+    {
+      "id": "P15",
+      "texto": "¿Para qué usa los datos personales?",
+      "tipo": "multiple",
+      "opciones": [
+        "Venta y despacho",
+        "Facturación y cobranza",
+        "Marketing propio",
+        "Marketing de terceros",
+        "Evaluación comercial o crediticia",
+        "Gestión de RRHH",
+        "Analítica y mejora del servicio",
+        "Cesión o venta de bases",
+        "Otros"
+      ]
+    },
+    {
+      "id": "P16",
+      "texto": "¿Puede identificar la base legal de cada uso (consentimiento, contrato, obligación legal, interés legítimo)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P17",
+      "texto": "Cuando pide consentimiento, ¿es específico e informado (no una casilla genérica) y queda registro?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No aplica"
+      ]
+    },
+    {
+      "id": "P18",
+      "texto": "¿Las personas pueden revocar su consentimiento tan fácil como lo dieron?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé",
+        "No aplica"
+      ],
+      "visible_si": {
+        "pregunta": "P17",
+        "distinto_de": "No aplica"
+      }
+    },
+    {
+      "id": "P19",
+      "texto": "¿Usa datos para fines distintos de aquellos para los que fueron recolectados (por ejemplo compartirlos con otra empresa del grupo)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P20",
+      "texto": "¿Tiene política de privacidad o de tratamiento de datos publicada en su sitio web?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí, actualizada a la Ley 21.719",
+        "Sí, pero antigua o genérica",
+        "No",
+        "No tenemos sitio web"
+      ]
+    },
+    {
+      "id": "P21",
+      "texto": "¿Su política indica: responsable, datos tratados, finalidades, base legal, destinatarios, medidas de seguridad, derechos del titular y derecho a reclamar ante la Agencia?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí, todo",
+        "Parcial",
+        "No",
+        "No tengo política"
+      ],
+      "visible_si": {
+        "pregunta": "P20",
+        "en": [
+          "Sí, actualizada a la Ley 21.719",
+          "Sí, pero antigua o genérica"
+        ]
+      }
+    },
+    {
+      "id": "P22",
+      "texto": "¿Publica un correo, formulario u otro medio operativo para que las personas se comuniquen y ejerzan sus derechos?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No"
+      ]
+    },
+    {
+      "id": "P23",
+      "texto": "¿Informa en cada punto donde recoge datos (formularios, contratos, cámaras) qué recoge y para qué?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P24",
+      "texto": "¿Tiene un procedimiento definido para responder solicitudes de acceso, rectificación, supresión, oposición o portabilidad?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P25",
+      "texto": "¿Podría responder una solicitud dentro de 30 días corridos y dejar constancia de la respuesta?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P26",
+      "texto": "¿Lleva registro de las solicitudes recibidas y sus respuestas?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "Nunca hemos recibido solicitudes"
+      ]
+    },
+    {
+      "id": "P27",
+      "texto": "Si una persona pide sus datos, ¿puede entregarlos en un archivo electrónico estructurado (por ejemplo Excel o CSV)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P28",
+      "texto": "¿Existen medidas de seguridad definidas para las bases de datos (política, responsable de TI, reglas de uso)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P29",
+      "texto": "¿Cada persona del equipo tiene cuenta y clave propia en los sistemas con datos personales?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P30",
+      "texto": "¿Usa verificación en dos pasos en los sistemas críticos (correo, e-commerce, nube)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P31",
+      "texto": "¿Los accesos están limitados según el cargo (no todos ven todo)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P32",
+      "texto": "¿Hace respaldos periódicos y podría restaurar los datos ante un incidente?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P33",
+      "texto": "¿Los datos sensibles (por ejemplo licencias médicas del personal) se guardan con protección adicional (acceso restringido o cifrado)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No tratamos datos sensibles"
+      ]
+    },
+    {
+      "id": "P34",
+      "texto": "¿Tiene un protocolo escrito para actuar si se filtran datos o alguien accede sin autorización?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P35",
+      "texto": "¿Sabía que desde diciembre de 2026 deberá notificar ciertas filtraciones a la Agencia, y a los afectados en algunos casos?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No"
+      ]
+    },
+    {
+      "id": "P36",
+      "texto": "¿Ha tenido incidentes de seguridad en los últimos 24 meses?",
+      "tipo": "unica",
+      "opciones": [
+        "No hemos tenido",
+        "Sí, y quedaron documentados",
+        "Sí, sin documentar",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P37",
+      "texto": "¿Qué proveedores externos tratan datos por cuenta de su empresa?",
+      "tipo": "multiple",
+      "opciones": [
+        "Hosting o nube",
+        "Plataforma e-commerce",
+        "Email marketing",
+        "Contabilidad o remuneraciones",
+        "Agencia de marketing",
+        "Courier o logística",
+        "Software de RRHH",
+        "Call center o soporte",
+        "Otros",
+        "Ninguno"
+      ]
+    },
+    {
+      "id": "P38",
+      "texto": "¿Tiene contratos con esos proveedores que regulen el tratamiento de datos (uso limitado, confidencialidad, devolución)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí, con todos",
+        "Con algunos",
+        "No",
+        "No lo sé"
+      ],
+      "visible_si": {
+        "pregunta": "P37",
+        "no_es_solo": "Ninguno"
+      }
+    },
+    {
+      "id": "P39",
+      "texto": "¿Sus proveedores pueden subcontratar a otras empresas sin avisarle?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ],
+      "visible_si": {
+        "pregunta": "P37",
+        "no_es_solo": "Ninguno"
+      }
+    },
+    {
+      "id": "P40",
+      "texto": "Al terminar un contrato con un proveedor, ¿se asegura de que devuelva o elimine los datos?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ],
+      "visible_si": {
+        "pregunta": "P37",
+        "no_es_solo": "Ninguno"
+      }
+    },
+    {
+      "id": "P41",
+      "texto": "¿Usa servicios que almacenan datos fuera de Chile (Google, Microsoft, AWS, Shopify, Mailchimp, matriz extranjera)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P42",
+      "texto": "¿Ha revisado bajo qué condiciones contractuales esos datos salen de Chile?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ],
+      "visible_si": {
+        "pregunta": "P41",
+        "es": "Sí"
+      }
+    },
+    {
+      "id": "P43",
+      "texto": "¿A quiénes envía correos o mensajes comerciales?",
+      "tipo": "multiple",
+      "opciones": [
+        "Solo a quienes lo aceptaron expresamente",
+        "A clientes, sin consentimiento expreso",
+        "A bases compradas o de terceros",
+        "No hacemos marketing directo"
+      ]
+    },
+    {
+      "id": "P44",
+      "texto": "¿Todos sus envíos comerciales tienen una opción de baja que funciona?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ],
+      "visible_si": {
+        "pregunta": "P43",
+        "no_incluye": "No hacemos marketing directo"
+      }
+    },
+    {
+      "id": "P45",
+      "texto": "¿Su sitio web usa cookies, píxeles o analítica (Google Analytics, Meta Pixel)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí, y lo informamos con opciones al usuario",
+        "Sí, sin avisar",
+        "No usamos",
+        "No lo sé"
+      ],
+      "visible_si": {
+        "pregunta": "P06",
+        "no_es_solo": "Ninguna"
+      }
+    },
+    {
+      "id": "P46",
+      "texto": "¿Toma decisiones automatizadas relevantes sobre personas (scoring, aprobación de créditos, precios personalizados, filtro de postulantes)?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P47",
+      "texto": "¿Alguien en la empresa es formalmente responsable del cumplimiento en protección de datos?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí, hay un delegado o encargado designado",
+        "Sí, pero de manera informal",
+        "No"
+      ]
+    },
+    {
+      "id": "P48",
+      "texto": "¿El equipo ha recibido capacitación sobre protección de datos en los últimos 12 meses?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No"
+      ]
+    },
+    {
+      "id": "P49",
+      "texto": "¿Los contratos de trabajo o el reglamento interno incluyen deberes de confidencialidad y uso de datos personales?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "Parcial",
+        "No",
+        "No lo sé"
+      ]
+    },
+    {
+      "id": "P50",
+      "texto": "Al lanzar un nuevo producto, campaña o sistema, ¿se evalúa antes el impacto en los datos personales?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "A veces",
+        "No"
+      ]
+    },
+    {
+      "id": "P51",
+      "texto": "¿Conocía el modelo de prevención de infracciones certificable ante la Agencia, que atenúa la responsabilidad de la empresa?",
+      "tipo": "unica",
+      "opciones": [
+        "Sí",
+        "No"
+      ]
+    }
+  ],
+  "modulos_sectoriales": [
+    {
+      "id": "modulo_salud",
+      "nombre": "Salud",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P02",
+            "es": "Salud"
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "SAL1",
+          "texto": "¿Qué información clínica registra de sus pacientes?",
+          "tipo": "multiple",
+          "opciones": [
+            "Ficha clínica completa",
+            "Exámenes y diagnósticos",
+            "Recetas",
+            "Imágenes médicas",
+            "Solo datos de contacto y agenda"
+          ]
+        },
+        {
+          "id": "SAL2",
+          "texto": "¿Dónde se almacenan las fichas o registros clínicos?",
+          "tipo": "unica",
+          "opciones": [
+            "Software de un proveedor externo (nube)",
+            "Sistema propio",
+            "Papel",
+            "Mixto"
+          ]
+        },
+        {
+          "id": "SAL3",
+          "texto": "¿Quiénes pueden acceder a la información clínica?",
+          "tipo": "unica",
+          "opciones": [
+            "Solo los profesionales tratantes",
+            "Personal clínico y administrativo",
+            "Todo el equipo",
+            "No está definido"
+          ]
+        },
+        {
+          "id": "SAL4",
+          "texto": "¿Comparte información clínica con isapres, seguros u otros prestadores?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, con respaldo legal o convenio",
+            "Sí, sin un marco claro",
+            "No",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "SAL5",
+          "texto": "¿Usa datos de pacientes para investigación, docencia o estadística?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modulo_ecommerce",
+      "nombre": "Comercio y e-commerce",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P02",
+            "es": "Comercio o e-commerce"
+          },
+          {
+            "pregunta": "P06",
+            "incluye": "Tienda online"
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "ECO1",
+          "texto": "¿Vende también en marketplaces (Mercado Libre, Falabella, Paris u otros)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No"
+          ]
+        },
+        {
+          "id": "ECO2",
+          "texto": "¿Tiene programa de fidelización, puntos o club de clientes?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "En desarrollo"
+          ]
+        },
+        {
+          "id": "ECO3",
+          "texto": "¿Sube su base de clientes a Meta o Google para crear audiencias publicitarias?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "ECO4",
+          "texto": "¿Vende productos con restricción de edad (alcohol u otros)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, con verificación de edad",
+            "Sí, sin verificación",
+            "No"
+          ]
+        },
+        {
+          "id": "ECO5",
+          "texto": "¿El pago lo procesa completamente un tercero (Transbank, Flow, MercadoPago) o su empresa guarda datos de tarjetas?",
+          "tipo": "unica",
+          "opciones": [
+            "Lo procesa completamente un tercero",
+            "Guardamos parte de los datos de pago",
+            "No lo sé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modulo_financiero",
+      "nombre": "Servicios financieros, crédito y cobranza",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P02",
+            "es": "Financiero o seguros"
+          },
+          {
+            "pregunta": "P15",
+            "incluye": "Evaluación comercial o crediticia"
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "FIN1",
+          "texto": "¿Consulta boletines comerciales (Dicom, Equifax u otros) para evaluar clientes?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No"
+          ]
+        },
+        {
+          "id": "FIN2",
+          "texto": "¿Reporta morosidades de clientes a boletines comerciales?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "FIN3",
+          "texto": "¿Usa scoring o modelos automáticos para aprobar o rechazar clientes?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "FIN4",
+          "texto": "¿Informa a sus clientes qué fuentes de información usa para evaluarlos?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "Parcial",
+            "No"
+          ]
+        },
+        {
+          "id": "FIN5",
+          "texto": "¿Su cobranza es propia o externalizada?",
+          "tipo": "unica",
+          "opciones": [
+            "Propia",
+            "Externa, con contrato que regula los datos",
+            "Externa, sin contrato claro",
+            "No aplica"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modulo_educacion",
+      "nombre": "Educación",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P02",
+            "es": "Educación"
+          },
+          {
+            "pregunta": "P09",
+            "incluye": "Menores de edad"
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "EDU1",
+          "texto": "¿De qué edades trata datos de estudiantes o usuarios?",
+          "tipo": "unica",
+          "opciones": [
+            "Solo adultos",
+            "Adolescentes (14 a 17)",
+            "Niños y adolescentes",
+            "Primera infancia"
+          ]
+        },
+        {
+          "id": "EDU2",
+          "texto": "¿Cómo obtiene el consentimiento de padres o apoderados para tratar datos de menores?",
+          "tipo": "unica",
+          "opciones": [
+            "Documento firmado específico para datos",
+            "Ficha de matrícula o inscripción genérica",
+            "No se pide",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "EDU3",
+          "texto": "¿Publica fotos o videos de estudiantes en redes sociales o web?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, con autorización específica",
+            "Sí, con autorización genérica",
+            "Sí, sin autorización",
+            "No publicamos"
+          ]
+        },
+        {
+          "id": "EDU4",
+          "texto": "¿Usa plataformas educativas externas (Google Classroom, Lirmi u otras)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "EDU5",
+          "texto": "¿Registra datos psicosociales o de convivencia (informes, derivaciones, medidas)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modulo_saas",
+      "nombre": "Tecnología y SaaS (la empresa como encargada)",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P02",
+            "es": "Tecnología o SaaS"
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "TEC1",
+          "texto": "¿Su servicio trata datos personales de los clientes de sus clientes (usuarios finales)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "En algunos servicios"
+          ]
+        },
+        {
+          "id": "TEC2",
+          "texto": "¿Sus contratos con clientes regulan qué hace con esos datos y su devolución o eliminación al término?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, en todos",
+            "En algunos",
+            "No"
+          ]
+        },
+        {
+          "id": "TEC3",
+          "texto": "¿Usa subproveedores que acceden a esos datos (nube, soporte, analítica)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, con autorización de los clientes",
+            "Sí, sin regularlo",
+            "No"
+          ]
+        },
+        {
+          "id": "TEC4",
+          "texto": "¿Dónde se alojan los datos que trata?",
+          "tipo": "unica",
+          "opciones": [
+            "Chile",
+            "Extranjero",
+            "Mixto",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "TEC5",
+          "texto": "¿Tiene certificaciones o compromisos de seguridad con sus clientes (ISO 27001, SLA de seguridad)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "En proceso",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modulo_rrhh",
+      "nombre": "RRHH intensivo, industria y logística",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P03",
+            "en": [
+              "50 a 199",
+              "200 o más"
+            ]
+          },
+          {
+            "pregunta": "P14",
+            "incluye_alguna": [
+              "Control biométrico de asistencia",
+              "GPS en vehículos",
+              "Monitoreo de correo o computadores"
+            ]
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "LAB1",
+          "texto": "Si usa biometría (huella o rostro), ¿informó a los trabajadores el sistema, su finalidad y las alternativas?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, por escrito",
+            "Solo verbalmente",
+            "No",
+            "No usamos biometría"
+          ]
+        },
+        {
+          "id": "LAB2",
+          "texto": "¿El monitoreo (correo, cámaras, GPS) está regulado en el reglamento interno?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "Parcial",
+            "No",
+            "No aplica"
+          ]
+        },
+        {
+          "id": "LAB3",
+          "texto": "¿Qué hace con los datos de postulantes no seleccionados?",
+          "tipo": "unica",
+          "opciones": [
+            "Se eliminan",
+            "Se guardan con su conocimiento",
+            "Se guardan sin avisar",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "LAB4",
+          "texto": "¿Entrega datos de trabajadores a terceros (mutual, cajas, seguros complementarios)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, con respaldo legal o convenio",
+            "Sí, sin evaluarlo",
+            "No",
+            "No lo sé"
+          ]
+        }
+      ]
+    }
+  ]
+}
