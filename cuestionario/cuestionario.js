@@ -129,7 +129,7 @@
       pt('⏱', 'Toma unos <b>' + c.tiempo_estimado + '</b>. Puedes pausar y retomar: tu avance se guarda solo.') +
       pt('✓', 'Responde con honestidad. No hay respuestas buenas ni malas, y <b>No lo sé</b> también es válido.') +
       pt('🔒', 'Tus respuestas son <b>confidenciales</b> y se usan solo para preparar tu diagnóstico.') +
-      pt('⚖', 'Con esto, una <b>abogada revisa y firma</b> tu diagnóstico y te lo enviamos por correo en un día hábil.') +
+      pt('⚖', 'Con esto, un <b>abogado del estudio revisa y firma</b> tu diagnóstico y te lo enviamos por correo en un día hábil.') +
       '</ul>';
     h += '<div class="field-code"><label for="code">Código de acceso <span class="hint">(lo recibiste en tu correo después de pagar)</span></label>' +
       '<input type="text" id="code" autocomplete="off" placeholder="Ej: ADHOC-XXXX" value="' + esc(state.code) + '" /></div>';
@@ -264,7 +264,7 @@
     if (!state.contact.razon_social && ans('P01')) state.contact.razon_social = ans('P01');
     var h = '<div class="screen"><span class="eyebrow accent">Último paso</span>' +
       '<h2 class="section-title">¿A dónde enviamos tu diagnóstico?</h2>' +
-      '<p class="lede">Con estos datos preparamos tu informe y te lo enviamos por correo, revisado y firmado por abogada.</p>';
+      '<p class="lede">Con estos datos preparamos tu informe y te lo enviamos por correo, revisado y firmado por un abogado del estudio.</p>';
     Object.keys(CONTACT_FIELDS).forEach(function (k) {
       var f = CONTACT_FIELDS[k];
       h += '<div class="field"><label for="c_' + k + '">' + f.label + (f.tag ? ' <span class="opt-tag">(' + f.tag + ')</span>' : '') + '</label>' +
@@ -347,9 +347,9 @@
       '<h1>¡Listo! Recibimos tus respuestas</h1>' +
       '<p class="lede">' + c.mensaje_final + '</p>' +
       '<div class="done-card">' +
-      step('1', 'Una abogada revisa tus respuestas', 'Analizamos tu situación frente a la Ley 21.719 con tu información.') +
+      step('1', 'Un abogado del estudio revisa tus respuestas', 'Analizamos tu situación frente a la Ley 21.719 con tu información.') +
       step('2', 'Preparamos tu diagnóstico', 'Con tu nivel de cumplimiento, tus brechas priorizadas y tu plan de acción.') +
-      step('3', 'Lo recibes por correo', 'Firmado por abogada, en <b>' + esc(state.contact.correo || 'tu correo') + '</b>, dentro de un día hábil.') +
+      step('3', 'Lo recibes por correo', 'Firmado por un abogado del estudio, en <b>' + esc(state.contact.correo || 'tu correo') + '</b>, dentro de un día hábil.') +
       '</div></div>';
   }
   function step(n, t, d) { return '<div class="step"><span class="ico" style="flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:700;font-size:.85rem">' + n + '</span><span><b>' + t + '</b><br>' + d + '</span></div>'; }

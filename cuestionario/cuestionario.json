@@ -246,12 +246,17 @@
       "tipo": "multiple",
       "opciones": [
         "Identificación y contacto",
+        "Datos de contacto profesional (de clientes o contrapartes)",
         "Financieros o comerciales",
         "Laborales y remuneraciones",
-        "Salud (licencias, exámenes)",
+        "Salud (licencias médicas del personal)",
+        "Ficha clínica o datos de salud de pacientes",
+        "Antecedentes penales, litigios o causas judiciales",
+        "Datos de niños, niñas o adolescentes",
+        "Datos académicos o de evaluación",
         "Biométricos (huella, rostro)",
         "Situación socioeconómica",
-        "Geolocalización",
+        "Geolocalización o GPS",
         "Imágenes de cámaras",
         "Historial de compras y navegación",
         "Otros"
@@ -309,12 +314,16 @@
       "texto": "¿Para qué usa los datos personales?",
       "tipo": "multiple",
       "opciones": [
+        "Prestación del servicio o atención al cliente",
         "Venta y despacho",
         "Facturación y cobranza",
         "Marketing propio",
         "Marketing de terceros",
         "Evaluación comercial o crediticia",
+        "Selección y reclutamiento de personal",
         "Gestión de RRHH",
+        "Cumplimiento de obligaciones legales (tributarias, laborales, sectoriales)",
+        "Seguridad, prevención de fraude o control de acceso",
         "Analítica y mejora del servicio",
         "Cesión o venta de bases",
         "Otros"
@@ -322,11 +331,11 @@
     },
     {
       "id": "P16",
-      "texto": "¿Puede identificar la base legal de cada uso (consentimiento, contrato, obligación legal, interés legítimo)?",
+      "texto": "Para cada uso que marcaste, ¿sabe con qué respaldo legal trata esos datos? Por ejemplo: la persona lo autorizó, es necesario para un contrato con ella, lo exige una ley, o hay un interés legítimo del negocio.",
       "tipo": "unica",
       "opciones": [
-        "Sí",
-        "Parcial",
+        "Sí, en todos",
+        "En algunos",
         "No",
         "No lo sé"
       ]
@@ -646,11 +655,11 @@
     },
     {
       "id": "P44",
-      "texto": "¿Todos sus envíos comerciales tienen una opción de baja que funciona?",
+      "texto": "En sus correos o mensajes comerciales, ¿la persona puede darse de baja fácilmente (dejar de recibirlos) y esa baja se respeta?",
       "tipo": "unica",
       "opciones": [
         "Sí",
-        "Parcial",
+        "En parte",
         "No"
       ],
       "visible_si": {
@@ -726,7 +735,7 @@
     },
     {
       "id": "P51",
-      "texto": "¿Conocía el modelo de prevención de infracciones certificable ante la Agencia, que atenúa la responsabilidad de la empresa?",
+      "texto": "¿Sabía que la empresa puede adoptar un programa interno de cumplimiento que, certificado ante la Agencia, reduce su responsabilidad ante eventuales sanciones?",
       "tipo": "unica",
       "opciones": [
         "Sí",
@@ -736,6 +745,73 @@
   ],
   "modulos_sectoriales": [
     {
+      "id": "modulo_profesional",
+      "nombre": "Servicios profesionales y estudios jurídicos",
+      "gatillo": {
+        "cualquiera_de": [
+          {
+            "pregunta": "P02",
+            "es": "Servicios profesionales"
+          },
+          {
+            "pregunta": "P10",
+            "incluye": "Antecedentes penales, litigios o causas judiciales"
+          }
+        ]
+      },
+      "preguntas": [
+        {
+          "id": "PRO1",
+          "texto": "¿Maneja datos de terceros relacionados con sus clientes (contrapartes, demandados, testigos), y no solo de sus clientes directos?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No",
+            "No lo sé"
+          ]
+        },
+        {
+          "id": "PRO2",
+          "texto": "¿Guarda antecedentes de causas, litigios o conflictos (penales, civiles, laborales)?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí",
+            "No"
+          ]
+        },
+        {
+          "id": "PRO3",
+          "texto": "¿Cómo protege la confidencialidad y el secreto profesional de los expedientes?",
+          "tipo": "unica",
+          "opciones": [
+            "Acceso restringido y protocolos definidos",
+            "Cuidado informal, sin protocolo escrito",
+            "No está definido"
+          ]
+        },
+        {
+          "id": "PRO4",
+          "texto": "¿Comparte información de casos con peritos, otros abogados o proveedores externos?",
+          "tipo": "unica",
+          "opciones": [
+            "Sí, con acuerdos de confidencialidad",
+            "Sí, sin acuerdos formales",
+            "No"
+          ]
+        },
+        {
+          "id": "PRO5",
+          "texto": "Al cerrar un caso, ¿qué hace con los documentos y datos del cliente y de terceros?",
+          "tipo": "unica",
+          "opciones": [
+            "Se conservan el tiempo que exige la ley y luego se eliminan",
+            "Se guardan indefinidamente",
+            "No está definido"
+          ]
+        }
+      ]
+    },
+    {
       "id": "modulo_salud",
       "nombre": "Salud",
       "gatillo": {
@@ -743,6 +819,10 @@
           {
             "pregunta": "P02",
             "es": "Salud"
+          },
+          {
+            "pregunta": "P10",
+            "incluye": "Ficha clínica o datos de salud de pacientes"
           }
         ]
       },
