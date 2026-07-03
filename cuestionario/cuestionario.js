@@ -295,16 +295,19 @@
     els.btnNext.disabled = true;
     els.btnNext.innerHTML = '<span class="spinner"></span> Enviando…';
 
-    var payload = buildPayload();
-    fetch(FORM_ENDPOINT, {
-      method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
-    }).then(function (r) {
-      if (!r.ok) throw new Error('bad');
-      state.submitted = true; save(); go('done');
-    }).catch(function () {
-      els.btnNext.disabled = false; els.btnNext.textContent = 'Enviar mis respuestas →';
-      vmsg('No pudimos enviar. Revisa tu conexión e inténtalo otra vez. Tus respuestas están guardadas.');
-    });
+    var body = JSON.stringify(buildPayload());
+    // 1º intenta guardar en Notion (vía /api). Si no está configurado, cae al respaldo (Formspree).
+    fetch('/api/diagnostico', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body })
+      .then(function (r) { if (r.ok) return r; throw new Error('api'); })
+      .catch(function () {
+        return fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: body })
+          .then(function (r) { if (!r.ok) throw new Error('formspree'); return r; });
+      })
+      .then(function () { state.submitted = true; save(); go('done'); })
+      .catch(function () {
+        els.btnNext.disabled = false; els.btnNext.textContent = 'Enviar mis respuestas →';
+        vmsg('No pudimos enviar. Revisa tu conexión e inténtalo otra vez. Tus respuestas están guardadas.');
+      });
   }
 
   function buildPayload() {
