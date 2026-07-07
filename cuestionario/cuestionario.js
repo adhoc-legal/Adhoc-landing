@@ -1,5 +1,5 @@
 /* ============================================================
-   ADHOC — Motor del cuestionario (Diagnóstico de cumplimiento Ley 21.719)
+   ADHOC · Motor del cuestionario (Diagnóstico de cumplimiento Ley 21.719)
    Vanilla JS. Lee cuestionario.json (versión pública, sin lógica interna).
    Guardado automático en el navegador. Envío por Formspree (v1).
    ============================================================ */
@@ -314,18 +314,18 @@
     var mods = activeModules().map(function (m) { return m.nombre; });
     var lines = [];
     coreSections.forEach(function (s) {
-      lines.push('— ' + s.titulo + ' —');
+      lines.push('[' + s.titulo + ']');
       s.preguntas.forEach(function (qid) {
         var q = qById[qid]; if (!q || !questionVisible(q)) return;
         lines.push(q.texto + '  →  ' + fmt(ans(qid)));
       });
     });
     activeModules().forEach(function (m) {
-      lines.push('— Rubro: ' + m.nombre + ' —');
+      lines.push('[Rubro: ' + m.nombre + ']');
       m.preguntas.forEach(function (q) { if (questionVisible(q)) lines.push(q.texto + '  →  ' + fmt(ans(q.id))); });
     });
     return {
-      _subject: 'Diagnóstico Ley 21.719 — ' + (state.contact.razon_social || ans('P01') || 'nueva empresa'),
+      _subject: 'Diagnóstico Ley 21.719: ' + (state.contact.razon_social || ans('P01') || 'nueva empresa'),
       tipo: 'Diagnóstico de cumplimiento (cuestionario pagado)',
       codigo_acceso: state.code,
       empresa: state.contact.razon_social || ans('P01') || '',
