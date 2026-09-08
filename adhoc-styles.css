@@ -1131,3 +1131,76 @@ html[data-theme="dark"] .aseso-cta { color: var(--accent); }
 .pago-back { display: inline-block; margin-top: 1.2rem; color: var(--gray-500); text-decoration: underline; text-underline-offset: 3px; font-size: 0.9rem; }
 .pago-back:hover { color: var(--black); }
 
+
+/* ============================================================
+   NAVEGACIÓN: SUBMENÚ DE ÁREAS
+   ============================================================ */
+.nav-links .has-sub { position: relative; }
+.sub-top { display: inline-flex; align-items: center; gap: 0.35rem; }
+.sub-chev { transition: transform 0.25s var(--ease); }
+.has-sub:hover .sub-chev,
+.has-sub:focus-within .sub-chev { transform: rotate(180deg); }
+
+/* Puente invisible para que el puntero llegue al submenú sin cerrarlo */
+.has-sub::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 18px; }
+
+.sub-menu {
+  position: absolute; top: calc(100% + 16px); left: -0.9rem; min-width: 252px;
+  list-style: none; margin: 0; padding: 0.5rem;
+  background: var(--white); border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+  z-index: var(--z-menu);
+}
+.has-sub:hover .sub-menu,
+.has-sub:focus-within .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.sub-menu a {
+  display: block; padding: 0.6rem 0.85rem; border-radius: 10px;
+  font-size: 0.9rem; font-weight: 500; color: var(--gray-700); text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+.sub-menu a:hover { background: var(--accent-soft); color: var(--black); }
+.sub-menu a[aria-current="page"] { background: var(--accent-soft); color: var(--black); font-weight: 600; }
+html[data-theme="dark"] .sub-menu { background: var(--gray-50); border-color: var(--gray-200); }
+
+@media (max-width: 1100px) {
+  .nav-links.open { max-height: calc(100svh - 66px - var(--ann-h)); overflow-y: auto; }
+  .nav-links .has-sub { width: 100%; }
+  .has-sub::after { display: none; }
+  .sub-chev { display: none; }
+  .sub-menu {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    background: transparent; border: none; box-shadow: none;
+    min-width: 0; padding: 0.5rem 0 0 0.9rem; display: grid; gap: 0.1rem;
+  }
+  .sub-menu a { padding: 0.45rem 0; }
+}
+
+/* ============================================================
+   PÁGINAS DE ÁREA DE PRÁCTICA
+   ============================================================ */
+html.no-ann { --ann-h: 0px; }
+
+.area-hero {
+  position: relative; overflow: hidden; background: var(--white);
+  display: flex; justify-content: center;
+  padding: calc(var(--ann-h) + 148px) var(--pad-x) clamp(3.5rem, 6vw, 5.5rem);
+}
+.area-hero .hero-title { font-size: clamp(2.5rem, 6vw, 4.4rem); }
+.area-hero .hero-subtitle { margin-bottom: 2.2rem; }
+
+.crumbs {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-size: 0.78rem; letter-spacing: 0.02em; color: var(--gray-500); margin-bottom: 1.4rem;
+}
+.crumbs a { color: var(--gray-600); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.crumbs a:hover { color: var(--black); border-bottom-color: var(--accent); }
+
+/* Tarjeta de área como enlace completo */
+a.service-card { display: block; text-decoration: none; color: inherit; }
+
+/* Botón secundario sobre la banda oscura */
+.why-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+#por-que .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.32); }
+#por-que .btn-ghost:hover { background: #fff; color: var(--ink); border-color: #fff; }

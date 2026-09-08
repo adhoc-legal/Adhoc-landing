@@ -312,3 +312,12 @@
     });
   }
 })();
+
+/* ── Enlaces antiguos: los anclajes de la Ley 21.719 se mudaron a /proteccion-de-datos/ ── */
+(function () {
+  var MUDADOS = { '#ley': 1, '#pasos': 1, '#informe': 1, '#charlas': 1, '#evaluacion': 1 };
+  var h = window.location.hash;
+  if (!h || !MUDADOS[h]) return;
+  if (document.getElementById(h.slice(1))) return; // el anclaje existe en esta página
+  window.location.replace('/proteccion-de-datos/' + h);
+}());
