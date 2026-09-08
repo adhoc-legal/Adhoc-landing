@@ -7,7 +7,7 @@ Disallow: /pago-rechazado.html
 
 # Crawlers de IA generativa: los recibimos explícitamente (GEO).
 # Queremos que ChatGPT, Claude, Perplexity, Gemini y Bing puedan
-# leer y citar nuestro contenido sobre la Ley 21.719.
+# leer y citar nuestro contenido sobre derecho de empresas y la Ley 21.719.
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User

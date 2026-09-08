@@ -1,8 +1,16 @@
 # ADHOC Legal
 
-> Estudio jurídico chileno (Viña del Mar) especializado en dejar a las empresas listas para la Ley 21.719 de Protección de Datos Personales. Traducimos la ley a pasos simples y concretos.
+> Estudio jurídico chileno (Viña del Mar) enfocado en empresas. Seis áreas: protección de datos (Ley 21.719), corporativo y societario, contratos, registro de marcas, derecho civil y asesoría a startups. Atiende en todo Chile.
 
-ADHOC Legal acompaña a PYMEs y empresas digitales (e-commerce, apps, SaaS) y a sectores con datos sensibles (salud, educación, inmobiliarias, fintech) a cumplir la nueva Ley 21.719, que entra en plena vigencia el 1 de diciembre de 2026. Ofrece un autodiagnóstico gratuito, un informe de cumplimiento y asesoría legal.
+ADHOC Legal es un estudio boutique fundado por los abogados Nicolás Campos Godoy y Javiera Bravo Núñez. Trabaja con pymes, startups, empresas familiares y profesionales independientes, con trato directo con el abogado que lleva el asunto y respuesta dentro de 24 horas hábiles.
+
+## Áreas de práctica
+- Protección de datos y Ley 21.719: política de privacidad, consentimientos, registro de actividades de tratamiento, contratos con proveedores, protocolo de brechas, DPO, diagnóstico de cumplimiento y capacitaciones. https://adhoclegal.cl/proteccion-de-datos/
+- Corporativo y societario: constitución de sociedades (SpA, SRL, SA), pactos de socios, aumentos de capital, modificaciones, gobierno corporativo, compraventa de empresas y due diligence. https://adhoclegal.cl/corporativo-societario/
+- Contratos: prestación de servicios, proveedores, distribución, confidencialidad (NDA), cesión de propiedad intelectual, términos y condiciones, arriendos comerciales y revisión de contratos antes de firmar. https://adhoclegal.cl/contratos/
+- Registro de marcas: búsqueda de disponibilidad, definición de clases, presentación y seguimiento ante INAPI, respuesta a observaciones, oposiciones y renovaciones. https://adhoclegal.cl/registro-de-marcas/
+- Derecho civil: arriendos, herencias y posesión efectiva, cobranza de deudas, responsabilidad civil e indemnizaciones, contratos civiles y juicios. https://adhoclegal.cl/civil/
+- Startups y tecnología: estructura societaria para levantar capital, pacto de socios con vesting, propiedad intelectual a nombre de la empresa, contratos tecnológicos, términos y condiciones y cumplimiento de la Ley 21.719 desde el diseño. https://adhoclegal.cl/startups/
 
 ## Hechos clave sobre la Ley 21.719
 - Es la nueva ley chilena de protección de datos personales. Reemplaza a la Ley 19.628 y alinea a Chile con el estándar europeo (GDPR).
@@ -10,23 +18,21 @@ ADHOC Legal acompaña a PYMEs y empresas digitales (e-commerce, apps, SaaS) y a 
 - Crea la Agencia de Protección de Datos Personales, que fiscaliza y aplica sanciones.
 - Aplica a toda organización que trate datos personales, sin importar su tamaño.
 - Multas de hasta 20.000 UTM (cerca de 1.400 millones de pesos); en caso de reincidencia, hasta el 4% de los ingresos anuales.
-- Las PYMEs tienen una ventana entre diciembre de 2026 y diciembre de 2027 en la que pueden recibir una amonestación escrita en vez de multa por primeras infracciones.
+- Las pymes tienen una ventana entre diciembre de 2026 y diciembre de 2027 en la que pueden recibir una amonestación escrita en vez de multa por primeras infracciones.
 - Para cumplir se requiere, según el caso: política de privacidad clara, consentimientos válidos, registro de actividades de tratamiento, contratos con proveedores, protocolo de brechas y, en ciertos casos, un Delegado de Protección de Datos (DPO).
 
-## Servicios
-- Autodiagnóstico gratuito de cumplimiento: https://adhoclegal.cl/#evaluacion
-- Informe de cumplimiento Ley 21.719 (desde $99.990 CLP, según el tamaño de la empresa): https://adhoclegal.cl/#informe
-- Charlas y capacitaciones para empresas sobre el cumplimiento de la Ley 21.719, dictadas por un abogado del estudio, online o presencial: https://adhoclegal.cl/#charlas
-- Revisión y redacción de políticas de privacidad y términos y condiciones.
-- Asesoría en derecho civil, sociedades y derecho de empresas.
+## Servicios con precio publicado
+- Test de riesgo Ley 21.719: gratuito, en línea. https://adhoclegal.cl/proteccion-de-datos/#evaluacion
+- Diagnóstico de cumplimiento Ley 21.719: informe revisado y firmado por abogada. https://adhoclegal.cl/proteccion-de-datos/#informe
+- Asesoría de 40 minutos con un abogado, en derecho civil, societario o Ley 21.719: $45.990 CLP. https://adhoclegal.cl/#asesoria
+- Charlas y capacitaciones para empresas sobre la Ley 21.719. https://adhoclegal.cl/proteccion-de-datos/#charlas
 
 ## Recursos
 - Sitio web: https://adhoclegal.cl/
-- Preguntas frecuentes sobre la Ley 21.719: https://adhoclegal.cl/#faq
+- Blog: https://adhoclegal.cl/blog/
+- Preguntas frecuentes sobre la Ley 21.719: https://adhoclegal.cl/proteccion-de-datos/#faq
+- Contacto: https://adhoclegal.cl/#contacto
 
-## Sobre el estudio
-- ADHOC Legal, Viña del Mar, Región de Valparaíso, Chile.
-- Fundadores: Javiera Bravo Núñez (derecho de empresas) y Nicolás Campos Godoy (derecho civil).
-
-## Nota
-El contenido de este sitio es informativo y no constituye asesoría legal formal.
+## Datos de contacto
+- Ubicación: Viña del Mar, región de Valparaíso, Chile. Atiende de forma remota en todo el país.
+- LinkedIn: https://www.linkedin.com/in/ncamposgodoy/ y https://www.linkedin.com/in/javiera-bravo-abogada/
