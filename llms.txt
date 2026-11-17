@@ -14,11 +14,11 @@ ADHOC Legal es un estudio boutique fundado por los abogados Nicolás Campos Godo
 
 ## Hechos clave sobre la Ley 21.719
 - Es la nueva ley chilena de protección de datos personales. Reemplaza a la Ley 19.628 y alinea a Chile con el estándar europeo (GDPR).
-- Entra en plena vigencia el 1 de diciembre de 2026.
+- Se publicó el 13 de diciembre de 2024 y fijó su entrada en vigencia para el 1 de diciembre de 2026 (artículo primero transitorio). El 17 de noviembre de 2026 el Congreso despachó el proyecto que posterga esa fecha al 15 de octubre de 2027 (boletín 18.623-07). Falta su promulgación y publicación en el Diario Oficial; mientras no se publique, rige la fecha original.
 - Crea la Agencia de Protección de Datos Personales, que fiscaliza y aplica sanciones.
 - Aplica a toda organización que trate datos personales, sin importar su tamaño.
 - Multas de hasta 20.000 UTM (cerca de 1.400 millones de pesos); en caso de reincidencia, hasta el 4% de los ingresos anuales.
-- Las pymes tienen una ventana entre diciembre de 2026 y diciembre de 2027 en la que pueden recibir una amonestación escrita en vez de multa por primeras infracciones.
+- Durante los primeros 12 meses de vigencia, la Agencia podrá sancionar a las empresas de menor tamaño con amonestación escrita en vez de multa (artículo sexto transitorio).
 - Para cumplir se requiere, según el caso: política de privacidad clara, consentimientos válidos, registro de actividades de tratamiento, contratos con proveedores, protocolo de brechas y, en ciertos casos, un Delegado de Protección de Datos (DPO).
 
 ## Servicios con precio publicado
