@@ -14,7 +14,7 @@
   var INTROS = {
     S0: 'Unas preguntas para conocer tu empresa. El tamaño incide en el régimen de multas y en quién puede asumir el rol de delegado de datos.',
     S1: 'Piensa en los datos de personas: clientes, trabajadores, proveedores. Los datos de empresas no cuentan, pero sí los de sus contactos.',
-    S2: 'Desde diciembre de 2026, todo uso de datos personales necesita una base legal: consentimiento u otra fuente que lo autorice.',
+    S2: 'Cuando la Ley 21.719 entre en vigencia, todo uso de datos personales necesitará una base legal: consentimiento u otra fuente que lo autorice.',
     S3: 'La ley exige mantener publicada una política de tratamiento con un contenido mínimo definido.',
     S4: 'Las personas podrán pedir acceso, rectificación, supresión, oposición, portabilidad y bloqueo de sus datos. Hay plazos para responder.',
     S5: 'La ley obliga a adoptar medidas de seguridad proporcionales al riesgo.',
