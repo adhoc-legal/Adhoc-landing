@@ -609,7 +609,7 @@ footer { background: var(--ink); color: #fff; padding: clamp(2.5rem, 4vw, 3.5rem
 footer .nav-logo .wm-txt { color: #fff; }
 .footer-inner { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
 .footer-tag { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.6rem; }
-.footer-links { display: flex; gap: 1.75rem; align-items: center; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.9rem 1.75rem; align-items: center; }
 .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; display: inline-flex; }
 .footer-links a:hover { color: #fff; }
 .footer-copy { width: 100%; text-align: center; font-size: 0.76rem; color: rgba(255,255,255,0.3); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2.25rem; }
