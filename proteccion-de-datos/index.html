@@ -25,7 +25,7 @@
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='32' y='45' font-family='Space Grotesk, Arial, sans-serif' font-size='34' font-weight='700' text-anchor='middle'%3E%3Ctspan fill='%23E8F55A'%3E%5B%3C/tspan%3E%3Ctspan fill='%23ffffff'%3EA%3C/tspan%3E%3Ctspan fill='%23E8F55A'%3E%5D%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="/recursos/fonts/fonts.css" />
-  <link rel="stylesheet" href="/adhoc-styles.css?v=9" />
+  <link rel="stylesheet" href="/adhoc-styles.css?v=11" />
   <script src="/theme-init.js?v=3"></script>
 
   <!-- Datos estructurados: estudio jurídico (SEO local) -->
@@ -77,7 +77,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "¿Qué es la Ley 21.719?", "acceptedAnswer": { "@type": "Answer", "text": "Es la nueva ley chilena de protección de datos personales. Reemplaza a la Ley 19.628 y pone a Chile al nivel del estándar europeo (GDPR). Crea una Agencia de Protección de Datos Personales que fiscaliza y aplica sanciones." } },
-      { "@type": "Question", "name": "¿Desde cuándo rige la Ley 21.719?", "acceptedAnswer": { "@type": "Answer", "text": "El Congreso aprobó postergar su entrada en vigencia del 1 de diciembre de 2026 al 15 de octubre de 2027. Falta su publicación en el Diario Oficial: mientras no se publique, la fecha legal sigue siendo el 1 de diciembre de 2026. Se movió la fecha, no la ley, así que conviene usar el tiempo extra para prepararse." } },
+      { "@type": "Question", "name": "¿Desde cuándo rige la Ley 21.719?", "acceptedAnswer": { "@type": "Answer", "text": "Desde el 15 de octubre de 2027. La Ley 21.855, publicada en el Diario Oficial el 23 de noviembre de 2026, postergó la fecha original del 1 de diciembre de 2026. Se movió la fecha, no la ley, así que conviene usar el tiempo extra para prepararse." } },
       { "@type": "Question", "name": "¿A qué empresas aplica la Ley 21.719?", "acceptedAnswer": { "@type": "Answer", "text": "A toda organización que trate datos de personas: e-commerce, apps, clínicas, pymes y más, sin importar su tamaño." } },
       { "@type": "Question", "name": "¿Qué multas tiene la Ley 21.719?", "acceptedAnswer": { "@type": "Answer", "text": "Hasta 20.000 UTM (cerca de 1.400 millones de pesos). En caso de reincidencia, hasta el 4% de los ingresos anuales." } },
       { "@type": "Question", "name": "¿Las pymes tienen plazo extra?", "acceptedAnswer": { "@type": "Answer", "text": "Durante los primeros 12 meses de vigencia, la Agencia podrá sancionar a las empresas de menor tamaño con una amonestación escrita en vez de multa (artículo sexto transitorio). Es una ventana para corregir, no para ignorar la ley." } },
@@ -111,7 +111,7 @@
 
 <!-- BARRA DE ANUNCIO (Ley 21.719) -->
 <a class="announce" id="announce" href="#evaluacion">
-  <span class="announce-txt">El Congreso aprobó mover la Ley 21.719 al 15 de octubre de 2027. Falta su publicación.</span>
+  <span class="announce-txt">La Ley 21.719 rige desde el 15 de octubre de 2027. Se movió la fecha, no la ley.</span>
   <span class="announce-cta">Haz el test de riesgo gratis <span class="arr">→</span></span>
 </a>
 
@@ -158,16 +158,16 @@
       Multas de hasta 20.000 UTM por no cumplir. Haz el test de riesgo gratis en 2 minutos.
     </p>
 
-    <!-- FECHA DE VIGENCIA Ley 21.719. Cuando la postergación se publique en el Diario Oficial,
-         cambiar POSTERGACION_PUBLICADA a true en /adhoc-app.js y este recuadro pasa a cuenta regresiva. -->
-    <div class="hero-countdown reveal" data-delay="280" aria-label="Nueva fecha de entrada en vigencia de la Ley 21.719 aprobada por el Congreso: 15 de octubre de 2027. Falta su publicación en el Diario Oficial.">
-      <div class="cd-label">Nueva fecha aprobada por el Congreso</div>
+    <!-- FECHA DE VIGENCIA Ley 21.719 (15-oct-2027, Ley 21.855). Con POSTERGACION_PUBLICADA en true
+         (/adhoc-app.js) el recuadro pasa a cuenta regresiva; sin JavaScript muestra la fecha. -->
+    <div class="hero-countdown reveal" data-delay="280" aria-label="La Ley 21.719 rige desde el 15 de octubre de 2027.">
+      <div class="cd-label">La Ley 21.719 rige desde el</div>
       <div class="cd-units" id="countdown">
         <div class="cd-unit"><span class="cd-num">15</span><span class="cd-tag">día</span></div>
         <div class="cd-unit"><span class="cd-num">OCT</span><span class="cd-tag">mes</span></div>
         <div class="cd-unit"><span class="cd-num">2027</span><span class="cd-tag">año</span></div>
       </div>
-      <div class="cd-note">Falta su publicación en el Diario Oficial.<br />Se movió la fecha, no la ley.</div>
+      <div class="cd-note">Ley 21.855, publicada el 23 de noviembre de 2026.<br />Se movió la fecha, no la ley.</div>
     </div>
 
     <div class="hero-actions reveal" data-delay="380">
@@ -718,7 +718,7 @@
       </details>
       <details class="faq-item">
         <summary>¿Desde cuándo rige?</summary>
-        <p>El Congreso aprobó postergar su entrada en vigencia del 1 de diciembre de 2026 al 15 de octubre de 2027. Falta su publicación en el Diario Oficial: mientras no se publique, la fecha legal sigue siendo el 1 de diciembre de 2026. Se movió la fecha, no la ley, así que conviene usar el tiempo extra para prepararse.</p>
+        <p>Desde el 15 de octubre de 2027. La Ley 21.855, publicada en el Diario Oficial el 23 de noviembre de 2026, postergó la fecha original del 1 de diciembre de 2026. Se movió la fecha, no la ley, así que conviene usar el tiempo extra para prepararse.</p>
       </details>
       <details class="faq-item">
         <summary>¿A qué empresas aplica?</summary>

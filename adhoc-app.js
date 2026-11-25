@@ -45,14 +45,11 @@
   }
 
   /* ── Fecha de vigencia de la Ley 21.719 ──
-     El 17-nov-2026 el Congreso despachó el proyecto que posterga la vigencia
-     del 1-dic-2026 al 15-oct-2027 (boletín 18.623-07). Falta su publicación en
-     el Diario Oficial. Mientras POSTERGACION_PUBLICADA sea false, la barra de
-     anuncio y el recuadro del hero muestran el texto fijo del HTML (sin cuenta
-     regresiva). Cuando se publique, cambiar a true: ambos pasan a contar los
-     días al 15-oct-2027. Los textos fijos que dicen "falta su publicación"
-     (FAQ, blog, llms.txt) se actualizan aparte. */
-  var POSTERGACION_PUBLICADA = false;
+     La Ley 21.855 (Diario Oficial, 23-nov-2026) cambió la vigencia del
+     1-dic-2026 al 15-oct-2027. Con POSTERGACION_PUBLICADA en true, la barra
+     de anuncio y el recuadro del hero de /proteccion-de-datos/ cuentan los
+     días a esa fecha. En false muestran solo el texto fijo del HTML. */
+  var POSTERGACION_PUBLICADA = true;
   // 15 de octubre de 2027, 00:00 hora de Chile continental (horario de verano, UTC-3)
   var VIGENCIA_LEY = new Date('2027-10-15T00:00:00-03:00').getTime();
 
@@ -133,9 +130,7 @@
       { n: '01', h: 'Chile estrena su "GDPR"', p: 'La Ley 21.719 reemplaza a la antigua Ley 19.628 y eleva la exigencia para cualquier empresa que trate datos personales.', t: ['GDPR chileno', 'Reemplaza la Ley 19.628'] },
       { n: '02', h: 'Aplica a casi todas las empresas', p: 'Cualquiera que recopile datos de clientes, usuarios o trabajadores: e-commerce, apps, clínicas, fintech y pymes, sin importar el tamaño.', t: ['E-commerce', 'Apps', 'Pymes', 'Salud'] },
       { n: '03', h: 'Multas de hasta 20.000 UTM', p: 'Las infracciones más graves llegan a cerca de $1.400 millones. En caso de reincidencia, hasta el 4% de tus ingresos anuales.', t: ['Hasta 20.000 UTM', 'Reincidencia: 4% de ingresos'] },
-      POSTERGACION_PUBLICADA
-        ? { n: '04', h: 'Rige desde el 15 de octubre de 2027', p: 'La ley se postergó: antes partía el 1 de diciembre de 2026. Se movió la fecha, no la ley. En los primeros 12 meses la Agencia podrá sancionar a las pymes con amonestación escrita en vez de multa.', t: ['15 de octubre de 2027', 'Ventana pyme: 12 meses'] }
-        : { n: '04', h: 'Nueva fecha: 15 de octubre de 2027', p: 'El Congreso aprobó mover la entrada en vigencia, que era el 1 de diciembre de 2026. Falta su publicación en el Diario Oficial. Se movió la fecha, no la ley: en los primeros 12 meses la Agencia podrá sancionar a las pymes con amonestación escrita en vez de multa.', t: ['15 de octubre de 2027', 'Falta su publicación', 'Ventana pyme: 12 meses'] }
+      { n: '04', h: 'Rige desde el 15 de octubre de 2027', p: 'La Ley 21.855, publicada el 23 de noviembre de 2026, movió la fecha original del 1 de diciembre de 2026. Se movió la fecha, no la ley: en los primeros 12 meses la Agencia podrá sancionar a las pymes con amonestación escrita en vez de multa.', t: ['15 de octubre de 2027', 'Ley 21.855', 'Ventana pyme: 12 meses'] }
     ];
     function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
     function render(i) {

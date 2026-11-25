@@ -14,7 +14,7 @@ ADHOC Legal es un estudio boutique fundado por los abogados Nicolás Campos Godo
 
 ## Hechos clave sobre la Ley 21.719
 - Es la nueva ley chilena de protección de datos personales. Reemplaza a la Ley 19.628 y alinea a Chile con el estándar europeo (GDPR).
-- Se publicó el 13 de diciembre de 2024 y fijó su entrada en vigencia para el 1 de diciembre de 2026 (artículo primero transitorio). El 17 de noviembre de 2026 el Congreso despachó el proyecto que posterga esa fecha al 15 de octubre de 2027 (boletín 18.623-07). Falta su promulgación y publicación en el Diario Oficial; mientras no se publique, rige la fecha original.
+- Se publicó el 13 de diciembre de 2024 y rige desde el 15 de octubre de 2027. La fecha original era el 1 de diciembre de 2026 (artículo primero transitorio); la Ley 21.855, publicada en el Diario Oficial el 23 de noviembre de 2026, la cambió al 15 de octubre de 2027. https://www.bcn.cl/leychile/navegar?idNorma=1230520
 - Crea la Agencia de Protección de Datos Personales, que fiscaliza y aplica sanciones.
 - Aplica a toda organización que trate datos personales, sin importar su tamaño.
 - Multas de hasta 20.000 UTM (cerca de 1.400 millones de pesos); en caso de reincidencia, hasta el 4% de los ingresos anuales.
