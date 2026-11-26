@@ -44,13 +44,34 @@
     }, 1300);
   }
 
-  /* ── CONTADOR REGRESIVO Ley 21.719 ── */
+  /* ── Fecha de vigencia de la Ley 21.719 ──
+     La Ley 21.855 (Diario Oficial, 23-nov-2026) cambió la vigencia del
+     1-dic-2026 al 15-oct-2027. Con POSTERGACION_PUBLICADA en true, la barra
+     de anuncio y el recuadro del hero de /proteccion-de-datos/ cuentan los
+     días a esa fecha. En false muestran solo el texto fijo del HTML. */
+  var POSTERGACION_PUBLICADA = true;
+  // 15 de octubre de 2027, 00:00 hora de Chile continental (horario de verano, UTC-3)
+  var VIGENCIA_LEY = new Date('2027-10-15T00:00:00-03:00').getTime();
+
+  /* ── CONTADOR REGRESIVO Ley 21.719 (solo con la postergación publicada) ── */
   (function () {
     var box = document.getElementById('countdown');
-    if (!box) return;
+    if (!box || !POSTERGACION_PUBLICADA) return;
     var cd = document.querySelector('.hero-countdown');
-    // 1 de diciembre de 2026, 00:00 hora de Chile continental (UTC-3)
-    var target = new Date('2026-12-01T00:00:00-03:00').getTime();
+    var target = VIGENCIA_LEY;
+    if (cd) {
+      cd.setAttribute('role', 'timer');
+      cd.setAttribute('aria-label', 'Cuenta regresiva para la entrada en vigencia de la Ley 21.719');
+      var lbl0 = cd.querySelector('.cd-label');
+      if (lbl0) lbl0.textContent = 'Faltan para el 15 de octubre de 2027:';
+      var note0 = cd.querySelector('.cd-note');
+      if (note0) note0.textContent = 'Se movió la fecha, no la ley.';
+    }
+    box.innerHTML =
+      '<div class="cd-unit"><span class="cd-num" data-cd="days"></span><span class="cd-tag">días</span></div>' +
+      '<div class="cd-unit"><span class="cd-num" data-cd="hours"></span><span class="cd-tag">hrs</span></div>' +
+      '<div class="cd-unit"><span class="cd-num" data-cd="mins"></span><span class="cd-tag">min</span></div>' +
+      '<div class="cd-unit"><span class="cd-num" data-cd="secs"></span><span class="cd-tag">seg</span></div>';
     var elD = box.querySelector('[data-cd="days"]');
     var elH = box.querySelector('[data-cd="hours"]');
     var elM = box.querySelector('[data-cd="mins"]');
@@ -82,19 +103,19 @@
     timer = setInterval(tick, 1000);
   })();
 
-  /* ── Días restantes en la barra de anuncio ── */
+  /* ── Días restantes en la barra de anuncio (solo con la postergación publicada) ── */
   (function () {
-    var el = document.getElementById('announce-days');
-    if (!el) return;
-    var target = new Date('2026-12-01T00:00:00-03:00').getTime();
+    var bar = document.getElementById('announce');
+    var txt = bar && bar.querySelector('.announce-txt');
+    if (!txt || !POSTERGACION_PUBLICADA) return;
+    var target = VIGENCIA_LEY;
     function upd() {
       var diff = target - Date.now();
       if (diff <= 0) {
-        var bar = document.getElementById('announce');
-        if (bar) bar.innerHTML = '<span class="announce-txt">La Ley 21.719 ya está vigente. Ponte al día ahora.</span><span class="announce-cta">Evalúa tu empresa <span class="arr">&#8594;</span></span>';
+        bar.innerHTML = '<span class="announce-txt">La Ley 21.719 ya está vigente. Ponte al día ahora.</span><span class="announce-cta">Evalúa tu empresa <span class="arr">&#8594;</span></span>';
         return;
       }
-      el.textContent = Math.floor(diff / 86400000);
+      txt.innerHTML = '⏳ La Ley 21.719 entra en vigencia el 15 de octubre de 2027. Faltan <strong>' + Math.floor(diff / 86400000) + '</strong> días.';
     }
     upd();
     setInterval(upd, 60000);
@@ -109,7 +130,7 @@
       { n: '01', h: 'Chile estrena su "GDPR"', p: 'La Ley 21.719 reemplaza a la antigua Ley 19.628 y eleva la exigencia para cualquier empresa que trate datos personales.', t: ['GDPR chileno', 'Reemplaza la Ley 19.628'] },
       { n: '02', h: 'Aplica a casi todas las empresas', p: 'Cualquiera que recopile datos de clientes, usuarios o trabajadores: e-commerce, apps, clínicas, fintech y pymes, sin importar el tamaño.', t: ['E-commerce', 'Apps', 'Pymes', 'Salud'] },
       { n: '03', h: 'Multas de hasta 20.000 UTM', p: 'Las infracciones más graves llegan a cerca de $1.400 millones. En caso de reincidencia, hasta el 4% de tus ingresos anuales.', t: ['Hasta 20.000 UTM', 'Reincidencia: 4% de ingresos'] },
-      { n: '04', h: 'Vigente el 1 de diciembre de 2026', p: 'Las pymes tienen una ventana de 12 meses con primeras infracciones amonestadas, pero la preparación parte hoy.', t: ['1 de diciembre de 2026', 'Ventana pyme: 12 meses'] }
+      { n: '04', h: 'Rige desde el 15 de octubre de 2027', p: 'La Ley 21.855, publicada el 23 de noviembre de 2026, movió la fecha original del 1 de diciembre de 2026. Se movió la fecha, no la ley: en los primeros 12 meses la Agencia podrá sancionar a las pymes con amonestación escrita en vez de multa.', t: ['15 de octubre de 2027', 'Ley 21.855', 'Ventana pyme: 12 meses'] }
     ];
     function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
     function render(i) {

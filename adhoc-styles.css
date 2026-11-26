@@ -288,6 +288,9 @@ section { padding: clamp(5rem, 9vw, 9rem) var(--pad-x); }
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--gray-500); text-align: center; max-width: 40ch; text-wrap: balance;
 }
+.hero-countdown .cd-note {
+  font-size: 0.82rem; color: var(--gray-500); text-align: center; max-width: 44ch; text-wrap: balance;
+}
 .cd-units { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: center; }
 .cd-unit {
   display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
